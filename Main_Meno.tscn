@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvl7eehkqhn4h"]
+
+[ext_resource type="Script" path="res://MarginContainer.gd" id="1_hdn52"]
+[ext_resource type="FontFile" uid="uid://bpep5j6x7abay" path="res://ghastly_panic/Ghastly Panic.ttf" id="2_t5o6t"]
+
+[sub_resource type="Theme" id="Theme_64fvk"]
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("2_t5o6t")
+
+[sub_resource type="Theme" id="Theme_uy888"]
+default_font_size = 64
+Button/fonts/font = ExtResource("2_t5o6t")
+
+[sub_resource type="Theme" id="Theme_rpb6s"]
+default_font_size = 64
+Button/fonts/font = ExtResource("2_t5o6t")
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hdn52")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1000, 650)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(350, 275)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 9
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_64fvk")
+text = "From the Dark"
+
+[node name="Start" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_uy888")
+text = "Start"
+
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_rpb6s")
+text = "Quit"
