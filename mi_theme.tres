@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://lfm32ou40lqe"]
+
+[ext_resource type="FontFile" uid="uid://bpep5j6x7abay" path="res://ghastly_panic/Ghastly Panic.ttf" id="1_kmhoq"]
+
+[resource]
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("1_kmhoq")
+Label/font_sizes/font_size = 128
+Label/fonts/font = ExtResource("1_kmhoq")

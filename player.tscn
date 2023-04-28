@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ds0y25cmkxaub"]
+[gd_scene load_steps=5 format=3 uid="uid://ds0y25cmkxaub"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_am54v"]
 [ext_resource type="ArrayMesh" uid="uid://cm83myp32a272" path="res://Package/Gestapo-0.obj" id="1_smxwi"]
+[ext_resource type="AudioStream" uid="uid://crlsikr8rkutk" path="res://Musica/Sonido_aleteo.mp3" id="3_6mlg2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tqt6a"]
 
@@ -16,3 +17,6 @@ shape = SubResource("BoxShape3D_tqt6a")
 [node name="Gestapo-0" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91129, 0, 0.405751)
 mesh = ExtResource("1_smxwi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6mlg2")
