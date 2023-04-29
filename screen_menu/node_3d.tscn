@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" path="res://screen_menu/Menu_pausa.tscn" id="2_asivk"]
 [ext_resource type="PackedScene" path="res://screen_menu/Menu_gameover.tscn" id="3_yn371"]
 [ext_resource type="PackedScene" uid="uid://cpihhmiforjqg" path="res://models/characters/player/poder.tscn" id="4_ekhpb"]
-[ext_resource type="AudioStream" uid="uid://b707rr1hpuu8l" path="res://sounds/music/Confusion.mp3" id="5_goyck"]
+[ext_resource type="AudioStream" uid="uid://b707rr1hpuu8l" path="res://audio/music/Confusion.mp3" id="5_goyck"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bk330"]
 
