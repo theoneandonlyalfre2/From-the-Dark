@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds0y25cmkxaub"]
+[gd_scene load_steps=5 format=3 uid="uid://cwuwghynksjj8"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_am54v"]
-[ext_resource type="ArrayMesh" uid="uid://cm83myp32a272" path="res://Gestapo-0.obj" id="1_smxwi"]
-[ext_resource type="AudioStream" uid="uid://crlsikr8rkutk" path="res://Sonido_aleteo.mp3" id="3_6mlg2"]
+[ext_resource type="Script" path="res://characters/player/player.gd" id="1_g6yfv"]
+[ext_resource type="ArrayMesh" uid="uid://cm83myp32a272" path="res://Gestapo-0.obj" id="2_6g0pg"]
+[ext_resource type="AudioStream" uid="uid://crlsikr8rkutk" path="res://Sonido_aleteo.mp3" id="3_yu56b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tqt6a"]
 
 [node name="player" type="CharacterBody3D"]
 transform = Transform3D(0.25, 0, -3.81149e-24, -3.81149e-24, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0.319152, 0)
-script = ExtResource("1_am54v")
+script = ExtResource("1_g6yfv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.44117, 2.44731e-36, -1.57772e-30, -2.06353e-37, 3.94276, 0, -4.44688e-31, -9.97087e-15, 1.5241, 0.351366, 1.94981, 0.337643)
@@ -16,7 +16,7 @@ shape = SubResource("BoxShape3D_tqt6a")
 
 [node name="Gestapo-0" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91129, 0, 0.405751)
-mesh = ExtResource("1_smxwi")
+mesh = ExtResource("2_6g0pg")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_6mlg2")
+stream = ExtResource("3_yu56b")

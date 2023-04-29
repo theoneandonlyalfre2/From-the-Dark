@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://dcwdyeldvulbp"]
+[gd_scene load_steps=18 format=3]
 
-[ext_resource type="PackedScene" uid="uid://ds0y25cmkxaub" path="res://player.tscn" id="1_akus5"]
-[ext_resource type="PackedScene" uid="uid://nned78kdwrgv" path="res://MI_theme/Menu_pausa.tscn" id="2_asivk"]
-[ext_resource type="PackedScene" uid="uid://dkmuc3on0a2tk" path="res://MI_theme/Menu_gameover.tscn" id="3_yn371"]
-[ext_resource type="PackedScene" uid="uid://cpihhmiforjqg" path="res://poder.tscn" id="4_ekhpb"]
-[ext_resource type="AudioStream" uid="uid://b707rr1hpuu8l" path="res://Musica/Confusion.mp3" id="5_goyck"]
+[ext_resource type="PackedScene" uid="uid://cwuwghynksjj8" path="res://characters/player/player.tscn" id="1_akus5"]
+[ext_resource type="PackedScene" uid="uid://nned78kdwrgv" path="res://Menu_pausa.tscn" id="2_asivk"]
+[ext_resource type="PackedScene" uid="uid://dkmuc3on0a2tk" path="res://Menu_gameover.tscn" id="3_yn371"]
+[ext_resource type="PackedScene" uid="uid://cpihhmiforjqg" path="res://characters/player/poder.tscn" id="4_ekhpb"]
+[ext_resource type="AudioStream" uid="uid://b707rr1hpuu8l" path="res://Confusion.mp3" id="5_goyck"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bk330"]
 
