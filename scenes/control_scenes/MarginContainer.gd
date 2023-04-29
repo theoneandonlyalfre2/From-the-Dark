@@ -8,7 +8,7 @@ func _ready():
 	quit.pressed.connect(_on_quit_presssed)
 
 func _on_start_presssed():
-	get_tree().change_scene_to_file("res://screen_menu/node_3d.tscn")
+	get_tree().change_scene_to_file("res://scenes/control_scenes/node_3d.tscn")
 	get_tree().paused = false
 	
 func _on_quit_presssed():

@@ -1,19 +1,19 @@
 [gd_scene load_steps=6 format=3 uid="uid://djxr82a7vkwhl"]
 
-[ext_resource type="Script" path="res://control_scenes/MarginContainer.gd" id="1_wao7q"]
-[ext_resource type="FontFile" uid="uid://bpep5j6x7abay" path="res://fonts/ghastly_panic/Ghastly Panic.ttf" id="2_78dum"]
+[ext_resource type="Script" path="res://scenes/control_scenes/MarginContainer.gd" id="1_ur5o8"]
+[ext_resource type="FontFile" uid="uid://bpep5j6x7abay" path="res://fonts/ghastly_panic/Ghastly Panic.ttf" id="2_epd5f"]
 
 [sub_resource type="Theme" id="Theme_64fvk"]
 Label/font_sizes/font_size = 64
-Label/fonts/font = ExtResource("2_78dum")
+Label/fonts/font = ExtResource("2_epd5f")
 
 [sub_resource type="Theme" id="Theme_uy888"]
 default_font_size = 64
-Button/fonts/font = ExtResource("2_78dum")
+Button/fonts/font = ExtResource("2_epd5f")
 
 [sub_resource type="Theme" id="Theme_rpb6s"]
 default_font_size = 64
-Button/fonts/font = ExtResource("2_78dum")
+Button/fonts/font = ExtResource("2_epd5f")
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wao7q")
+script = ExtResource("1_ur5o8")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(1000, 650)

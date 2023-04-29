@@ -10,10 +10,10 @@ func _ready():
 	quit.pressed.connect(_on_quit_presssed)
 	retry.pressed.connect(_on_retry_presssed)
 func _on_menu_principal_presssed():
-	get_tree().change_scene_to_file("res://screen_menu/main_menu.tscn")	
+	get_tree().change_scene_to_file("res://scenes/control_scenes/main_menu.tscn")	
 	
 func _on_retry_presssed():
-	get_tree().change_scene_to_file("res://screen_menu/node_3d.tscn")
+	get_tree().change_scene_to_file("res://scenes/control_scenes/node_3d.tscn")
 
 func _on_quit_presssed(): 
 	get_tree().quit()

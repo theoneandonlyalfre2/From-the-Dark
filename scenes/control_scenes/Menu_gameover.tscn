@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://control_scenes/Menu_gameover.gd" id="1_hqod5"]
-[ext_resource type="Theme" uid="uid://lfm32ou40lqe" path="res://control_scenes/mi_theme.tres" id="2_at2bq"]
+[ext_resource type="Script" path="res://scenes/control_scenes/Menu_gameover.gd" id="1_hqod5"]
+[ext_resource type="Theme" uid="uid://lfm32ou40lqe" path="res://scenes/control_scenes/mi_theme.tres" id="2_at2bq"]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15

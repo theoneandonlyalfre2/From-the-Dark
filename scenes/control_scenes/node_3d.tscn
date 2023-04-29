@@ -1,8 +1,8 @@
 [gd_scene load_steps=18 format=3]
 
 [ext_resource type="PackedScene" path="res://models/characters/player/player.tscn" id="1_akus5"]
-[ext_resource type="PackedScene" path="res://control_scenes/Menu_pausa.tscn" id="2_asivk"]
-[ext_resource type="PackedScene" path="res://control_scenes/Menu_gameover.tscn" id="3_yn371"]
+[ext_resource type="PackedScene" path="res://scenes/control_scenes/Menu_pausa.tscn" id="2_asivk"]
+[ext_resource type="PackedScene" path="res://scenes/control_scenes/Menu_gameover.tscn" id="3_yn371"]
 [ext_resource type="PackedScene" uid="uid://cpihhmiforjqg" path="res://models/characters/player/poder.tscn" id="4_ekhpb"]
 [ext_resource type="AudioStream" uid="uid://b707rr1hpuu8l" path="res://audio/music/Confusion.mp3" id="5_goyck"]
 
