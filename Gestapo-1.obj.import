@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://cuc4ks078klfs"
-path="res://.godot/imported/Gestapo-1.obj-5f897998214f3308ca3e090341905768.mesh"
+path="res://.godot/imported/Gestapo-1.obj-d8d12179aba9457c8c5f283ccec56fb5.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Gestapo-1.obj-5f897998214f3308ca3e090341905768.mesh"]
+files=["res://.godot/imported/Gestapo-1.obj-d8d12179aba9457c8c5f283ccec56fb5.mesh"]
 
-source_file="res://Package/Gestapo-1.obj"
-dest_files=["res://.godot/imported/Gestapo-1.obj-5f897998214f3308ca3e090341905768.mesh", "res://.godot/imported/Gestapo-1.obj-5f897998214f3308ca3e090341905768.mesh"]
+source_file="res://Gestapo-1.obj"
+dest_files=["res://.godot/imported/Gestapo-1.obj-d8d12179aba9457c8c5f283ccec56fb5.mesh", "res://.godot/imported/Gestapo-1.obj-d8d12179aba9457c8c5f283ccec56fb5.mesh"]
 
 [params]
 
