@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3]
 
-[ext_resource type="Theme" uid="uid://lfm32ou40lqe" path="res://screen_menu/mi_theme.tres" id="1_n25ny"]
-[ext_resource type="Script" path="res://screen_menu/Menu_pausa.gd" id="1_wd3db"]
+[ext_resource type="Theme" uid="uid://lfm32ou40lqe" path="res://control_scenes/mi_theme.tres" id="1_n25ny"]
+[ext_resource type="Script" path="res://control_scenes/Menu_pausa.gd" id="1_wd3db"]
 
 [node name="MarginContainer" type="MarginContainer"]
 process_mode = 3

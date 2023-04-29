@@ -1,2 +1,3 @@
 res://screen_menu/main_menu.tscn
 res://models/characters/player/player.gd
+res://scenes/screen_menu/main_menu.tscn
