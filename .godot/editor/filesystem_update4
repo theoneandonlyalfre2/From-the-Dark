@@ -1,7 +1,2 @@
-res://screen_menu/main_menu.tscn
-res://models/characters/player/player.gd
-res://scenes/screen_menu/main_menu.tscn
 res://scenes/control_scenes/main_menu.tscn
 res://scenes/control_scenes/MarginContainer.gd
-res://scenes/control_scenes/Menu_gameover.gd
-res://scenes/control_scenes/Menu_pausa.gd
