@@ -9,7 +9,6 @@ func _ready():
 	pass
 	
 func _process(delta):
-	
 	resume.pressed.connect(_on_resume_presssed)
 	restart.pressed.connect(_on_restart_presssed)
 	menu_principal.pressed.connect(_on_menu_principal_presssed)

@@ -11,3 +11,6 @@ res://screen_menu/MarginContainer.gd
 res://screen_menu/main_menu.tscn
 res://screen_menu/Menu_gameover.gd
 res://screen_menu/Menu_pausa.gd
+res://screen_menu/node_3d.tscn
+res://docs.gd
+res://README.txt
