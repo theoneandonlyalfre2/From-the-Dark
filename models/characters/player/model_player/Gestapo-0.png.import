@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://biwk81pjn2tmn"
-path.s3tc="res://.godot/imported/Gestapo-0.png-4affe0f286b0432b9cbe00d5407e8404.s3tc.ctex"
+path.s3tc="res://.godot/imported/Gestapo-0.png-726a10345999c8de4f7b911ddd78dd7f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://characters/player/model_player/Gestapo-0.png"
-dest_files=["res://.godot/imported/Gestapo-0.png-4affe0f286b0432b9cbe00d5407e8404.s3tc.ctex"]
+source_file="res://models/characters/player/model_player/Gestapo-0.png"
+dest_files=["res://.godot/imported/Gestapo-0.png-726a10345999c8de4f7b911ddd78dd7f.s3tc.ctex"]
 
 [params]
 

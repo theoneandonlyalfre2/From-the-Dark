@@ -1,16 +1,2 @@
-res://player.tscn
-res://player.gd
-res://characters/player.tscn
-res://characters/player.gd
-res://characters/player/player.tscn
-res://characters/player/player.gd
-res://characters/player/poder.tscn
-res://Main_Meno.tscn
-res://screen_menu/Main_Meno.tscn
-res://screen_menu/MarginContainer.gd
 res://screen_menu/main_menu.tscn
-res://screen_menu/Menu_gameover.gd
-res://screen_menu/Menu_pausa.gd
-res://screen_menu/node_3d.tscn
-res://docs.gd
-res://README.txt
+res://models/characters/player/player.gd

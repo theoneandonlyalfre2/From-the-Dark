@@ -13,7 +13,7 @@ extends CharacterBody3D
 @onready var audio_stream_player = $AudioStreamPlayer
 
 ## Load a reference to a poder.tscn scene.
-var Poder = preload("res://characters/player/poder.tscn")
+var Poder = preload("res://models/characters/player/poder.tscn")
 
 # Define variables to track the state of the player's abilities and various time intervals.
 

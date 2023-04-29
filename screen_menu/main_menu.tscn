@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d272dkpgwg5uq"]
+[gd_scene load_steps=6 format=3 uid="uid://c5ixsjj3osmca"]
 
 [ext_resource type="Script" path="res://screen_menu/MarginContainer.gd" id="1_nqc31"]
 [ext_resource type="FontFile" uid="uid://bpep5j6x7abay" path="res://fonts/ghastly_panic/Ghastly Panic.ttf" id="2_78wjm"]
