@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwuwghynksjj8"]
+[gd_scene load_steps=5 format=3 uid="uid://8cd6lote7ysj"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_g6yfv"]
 [ext_resource type="ArrayMesh" uid="uid://cm83myp32a272" path="res://Gestapo-0.obj" id="2_6g0pg"]
-[ext_resource type="AudioStream" uid="uid://crlsikr8rkutk" path="res://Sonido_aleteo.mp3" id="3_yu56b"]
+[ext_resource type="AudioStream" uid="uid://crlsikr8rkutk" path="res://sounds/other/Sonido_aleteo.mp3" id="3_lspja"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tqt6a"]
 
@@ -19,4 +19,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91129, 0, 0.405751)
 mesh = ExtResource("2_6g0pg")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_yu56b")
+stream = ExtResource("3_lspja")
