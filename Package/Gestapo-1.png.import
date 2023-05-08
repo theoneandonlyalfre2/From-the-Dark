@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cav14uuec7ot8"
-path.etc2="res://.godot/imported/Gestapo-1.png-0f2e2c0f93d7733faf949ef7b32b5f2c.etc2.ctex"
+path.s3tc="res://.godot/imported/Gestapo-1.png-0f2e2c0f93d7733faf949ef7b32b5f2c.s3tc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Package/Gestapo-1.png"
-dest_files=["res://.godot/imported/Gestapo-1.png-0f2e2c0f93d7733faf949ef7b32b5f2c.etc2.ctex"]
+dest_files=["res://.godot/imported/Gestapo-1.png-0f2e2c0f93d7733faf949ef7b32b5f2c.s3tc.ctex"]
 
 [params]
 
