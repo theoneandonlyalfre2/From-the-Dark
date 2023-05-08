@@ -1,4 +1,1 @@
 res://scenes/control_scenes/main_menu.tscn
-res://scenes/control_scenes/MarginContainer.gd
-res://scenes/control_scenes/Menu_gameover.gd
-res://scenes/control_scenes/Menu_pausa.gd
