@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cm83myp32a272"
+path="res://.godot/imported/Gestapo-0.obj-7852344b76360df9702e98bddd4469a6.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Gestapo-0.obj-7852344b76360df9702e98bddd4469a6.mesh"]
+
+source_file="res://models/characters/player/model_player/Gestapo-0.obj"
+dest_files=["res://.godot/imported/Gestapo-0.obj-7852344b76360df9702e98bddd4469a6.mesh", "res://.godot/imported/Gestapo-0.obj-7852344b76360df9702e98bddd4469a6.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
