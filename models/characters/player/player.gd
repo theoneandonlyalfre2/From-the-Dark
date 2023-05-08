@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 ## Version: 1.1 |
 ## This script defines the behavior of the bat.
