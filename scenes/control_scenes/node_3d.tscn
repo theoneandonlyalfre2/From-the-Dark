@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3]
+[gd_scene load_steps=19 format=3 uid="uid://3ev7yiqy50jg"]
 
-[ext_resource type="PackedScene" path="res://models/characters/player/player.tscn" id="1_akus5"]
-[ext_resource type="PackedScene" path="res://scenes/control_scenes/Menu_pausa.tscn" id="2_asivk"]
-[ext_resource type="PackedScene" path="res://scenes/control_scenes/Menu_gameover.tscn" id="3_yn371"]
-[ext_resource type="PackedScene" uid="uid://cpihhmiforjqg" path="res://models/characters/player/poder.tscn" id="4_ekhpb"]
+[ext_resource type="PackedScene" uid="uid://ya21rrd7oioh" path="res://models/characters/player/player.tscn" id="1_akus5"]
+[ext_resource type="PackedScene" uid="uid://comruxpv4b3ad" path="res://scenes/control_scenes/Menu_pausa.tscn" id="2_asivk"]
+[ext_resource type="PackedScene" uid="uid://bes3apfcqe06e" path="res://scenes/control_scenes/Menu_gameover.tscn" id="3_yn371"]
+[ext_resource type="QuadMesh" uid="uid://bh6ojfd6dr3qx" path="res://resources/pulse_mesh.tres" id="4_e8u5s"]
 [ext_resource type="AudioStream" uid="uid://b707rr1hpuu8l" path="res://audio/music/Confusion.mp3" id="5_goyck"]
+[ext_resource type="Script" path="res://resources/pulse_controller.gd" id="5_ox6hd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bk330"]
 
@@ -45,10 +46,10 @@ transform = Transform3D(1.00319, 0, 0, 0, 1.00319, 0, 0, 0, 1.00319, 0, 0, 0)
 shape = SubResource("BoxShape3D_12ppn")
 
 [node name="player" parent="." instance=ExtResource("1_akus5")]
-transform = Transform3D(0.25, 0, -3.81149e-24, -3.81149e-24, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0.0950482, 3.24152, -7.43992)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.239266, 0)
 
 [node name="Camera3D" type="Camera3D" parent="player"]
-transform = Transform3D(-3.99998, -0.00207768, -0.0139487, 0.0117542, 1.6949, -3.62314, 0.00779234, -3.62316, -1.69489, 0.467809, -4.245, -3.05064)
+transform = Transform3D(-1, 0, -8.74228e-08, -1.68817e-08, 0.981178, 0.193104, 8.57773e-08, 0.193104, -0.981178, 0, 0.857249, -1.61106)
 
 [node name="MarginContainer" parent="player" instance=ExtResource("2_asivk")]
 visible = false
@@ -62,8 +63,10 @@ visible = false
 light_energy = 0.0
 omni_range = 2412.33
 
-[node name="Poder" parent="player" instance=ExtResource("4_ekhpb")]
-transform = Transform3D(1, 0, 2.913e-38, 0, 1, 0, 0, 0, 1, 0, 15.0635, 9.53674e-07)
+[node name="Ecolocalización" type="MeshInstance3D" parent="player"]
+mesh = ExtResource("4_e8u5s")
+script = ExtResource("5_ox6hd")
+_origin_point = NodePath("..")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.511533, 0.859264, 0, -0.859264, 0.511533, 0, 3.71128, 5.75533)

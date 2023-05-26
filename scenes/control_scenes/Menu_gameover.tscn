@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://bes3apfcqe06e"]
 
 [ext_resource type="Script" path="res://scenes/control_scenes/Menu_gameover.gd" id="1_hqod5"]
-[ext_resource type="Theme" uid="uid://lfm32ou40lqe" path="res://scenes/control_scenes/mi_theme.tres" id="2_at2bq"]
+[ext_resource type="Theme" uid="uid://lfm32ou40lqe" path="res://resources/mi_theme.tres" id="2_rdcph"]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15
@@ -32,23 +32,23 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_at2bq")
+theme = ExtResource("2_rdcph")
 text = "Game Over"
 
 [node name="Menu_principal" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("2_at2bq")
+theme = ExtResource("2_rdcph")
 text = "Menu Principal"
 
 [node name="Retry" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("2_at2bq")
+theme = ExtResource("2_rdcph")
 text = "Retry"
 
 [node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("2_at2bq")
+theme = ExtResource("2_rdcph")
 text = "Quit"

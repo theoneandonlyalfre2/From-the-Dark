@@ -1,12 +1,12 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://ya21rrd7oioh"]
 
 [ext_resource type="Script" path="res://models/characters/player/player.gd" id="1_g6yfv"]
 [ext_resource type="AudioStream" uid="uid://crlsikr8rkutk" path="res://audio/sounds/Sonido_aleteo.mp3" id="3_lspja"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tqt6a"]
+size = Vector3(0.4, 0.3, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ico2"]
-load_path = "res://.godot/imported/Gestapo-0.png-91320bbec287d7cc6b0fbdc0919dd9a2.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1iks1"]
 resource_name = "palette"
@@ -27,15 +27,13 @@ _surfaces = [{
 }]
 
 [node name="player" type="CharacterBody3D"]
-transform = Transform3D(0.25, 0, -3.81149e-24, -3.81149e-24, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, 0, 0.319152, 0)
 script = ExtResource("1_g6yfv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.44117, 2.44731e-36, -1.57772e-30, -2.06353e-37, 3.94276, 0, -4.44688e-31, -9.97087e-15, 1.5241, 0.351366, 1.94981, 0.337643)
 shape = SubResource("BoxShape3D_tqt6a")
 
 [node name="Gestapo-0" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91129, 0, 0.405751)
+transform = Transform3D(0.25, 0, 0, 0, -1.09278e-08, -0.25, 0, 0.25, -1.09278e-08, -0.3, 0, -0.5)
 mesh = SubResource("ArrayMesh_b46f0")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

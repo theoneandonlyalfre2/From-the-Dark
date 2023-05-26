@@ -18,13 +18,13 @@ extends MarginContainer
 
 ## Undefined.
 func _ready():
-	pass
-
-## Undefined.
-func _process(delta):
 	resume.pressed.connect(_on_resume_presssed)
 	restart.pressed.connect(_on_restart_presssed)
 	menu_principal.pressed.connect(_on_menu_principal_presssed)
+
+## Undefined.
+func _process(delta):
+	pass
 
 ## Undefined.
 func _input(event):

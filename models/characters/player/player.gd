@@ -63,7 +63,7 @@ func _physics_process(delta):
 	# Move the player based on the input direction or decelerate if no input is detected.
 	if direction:
 		velocity.x = -direction.x * SPEED
-		velocity.z = direction.y * SPEED
+		velocity.z = -direction.z * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
