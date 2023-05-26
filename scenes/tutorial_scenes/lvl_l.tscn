@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=3 uid="uid://d25g4tjeoeaq8"]
+
+[ext_resource type="PackedScene" uid="uid://ce6jxc018trp1" path="res://scenes/tutorial_scenes/Tutorial3.glb" id="1_pmxye"]
+[ext_resource type="PackedScene" uid="uid://ya21rrd7oioh" path="res://models/characters/player/player.tscn" id="2_jsluf"]
+[ext_resource type="PackedScene" uid="uid://comruxpv4b3ad" path="res://scenes/control_scenes/Menu_pausa.tscn" id="3_k0o8a"]
+[ext_resource type="PackedScene" uid="uid://bes3apfcqe06e" path="res://scenes/control_scenes/Menu_gameover.tscn" id="4_kiuij"]
+[ext_resource type="QuadMesh" uid="uid://bh6ojfd6dr3qx" path="res://resources/pulse_mesh.tres" id="5_71klk"]
+[ext_resource type="Script" path="res://resources/pulse_controller.gd" id="6_5ihla"]
+[ext_resource type="AudioStream" uid="uid://b707rr1hpuu8l" path="res://audio/music/Confusion.mp3" id="7_y6abf"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rt3bw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0v3u"]
+size = Vector3(1, 2.72261, 8.25157)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_drtda"]
+size = Vector3(1, 2.72261, 10.2572)
+
+[node name="Lvl L" type="Node3D"]
+
+[node name="Tutorial3" parent="." instance=ExtResource("1_pmxye")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tutorial3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tutorial3/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_rt3bw")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Tutorial3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0.65, -4.136)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tutorial3/StaticBody3D2"]
+shape = SubResource("BoxShape3D_e0v3u")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Tutorial3/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
+shape = SubResource("BoxShape3D_e0v3u")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Tutorial3/StaticBody3D2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.52441, 0, 4.6)
+shape = SubResource("BoxShape3D_drtda")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Tutorial3/StaticBody3D2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.81372, 0, 1.63904)
+shape = SubResource("BoxShape3D_drtda")
+
+[node name="player" parent="." instance=ExtResource("2_jsluf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.607635, 0.239266, -1.24953)
+
+[node name="Camera3D" type="Camera3D" parent="player"]
+transform = Transform3D(-1, -1.68308e-08, 8.57873e-08, 0, 0.981293, 0.192522, -8.74228e-08, 0.192522, -0.981293, 0, 0.857, -1.698)
+
+[node name="MarginContainer" parent="player" instance=ExtResource("3_k0o8a")]
+visible = false
+
+[node name="MarginContainer2" parent="player" instance=ExtResource("4_kiuij")]
+visible = false
+
+[node name="Ecolocalización" type="MeshInstance3D" parent="player"]
+visible = false
+mesh = ExtResource("5_71klk")
+script = ExtResource("6_5ihla")
+_origin_point = NodePath("..")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_y6abf")
+autoplay = true

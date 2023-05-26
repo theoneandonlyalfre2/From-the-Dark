@@ -4,6 +4,8 @@ extends MeshInstance3D
 
 @onready var origin_point : Node3D = get_node(_origin_point)
 @onready var shader : ShaderMaterial = self.get_active_material(0)
+func _ready():
+	show()
 
 func _unhandled_key_input(event:InputEvent):
 	if event.is_pressed() and event.keycode == KEY_F:

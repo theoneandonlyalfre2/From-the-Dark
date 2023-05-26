@@ -21,7 +21,7 @@ func _ready():
 
 ## Undefined.
 func _on_start_presssed():
-	get_tree().change_scene_to_file("res://scenes/control_scenes/node_3d.tscn")
+	get_tree().change_scene_to_file("res://scenes/tutorial_scenes/lvl_l.tscn")
 	get_tree().paused = false
 	
 ## Undefined.

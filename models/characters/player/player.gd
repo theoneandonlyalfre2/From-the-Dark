@@ -8,8 +8,6 @@ class_name Player
 
 # Load references
 
-## Load reference to a Luz_var node.
-@onready var luz_var = %Luz_var
 ## Load reference to an AudioStreamPlayer node.
 @onready var audio_stream_player = $AudioStreamPlayer
 

@@ -57,12 +57,6 @@ visible = false
 [node name="MarginContainer2" parent="player" instance=ExtResource("3_yn371")]
 visible = false
 
-[node name="Luz_var" type="OmniLight3D" parent="player"]
-unique_name_in_owner = true
-visible = false
-light_energy = 0.0
-omni_range = 2412.33
-
 [node name="Ecolocalización" type="MeshInstance3D" parent="player"]
 mesh = ExtResource("4_e8u5s")
 script = ExtResource("5_ox6hd")
