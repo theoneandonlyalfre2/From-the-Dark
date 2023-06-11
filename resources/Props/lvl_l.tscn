@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c61wsifl0is0d"]
+
+[ext_resource type="PackedScene" uid="uid://diwy57d5aqawl" path="res://resources/Props/ImageToStl.com_gas tank.glb" id="1_jnbct"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="gastank" parent="." instance=ExtResource("1_jnbct")]
+transform = Transform3D(0.346, 0, 0, 0, 0.346, 0, 0, 0, 0.346, 0, 0, 0)

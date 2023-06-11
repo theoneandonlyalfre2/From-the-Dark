@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn1h5rnqed6dl"]
+
+[ext_resource type="PackedScene" uid="uid://7nld813pp41d" path="res://resources/Props/barril.glb" id="1_ewyb6"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="barril" parent="." instance=ExtResource("1_ewyb6")]
+transform = Transform3D(0.272, 0, 0, 0, 0.272, 0, 0, 0, 0.272, 0, 0, 0)
