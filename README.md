@@ -1,3 +1,4 @@
+```
 # How to document a script in godot
 
 # Use double # to start to document, one # will only count like a coment.
@@ -24,3 +25,4 @@ const crying = true
 if crying == true:
 	n++
 """
+```
