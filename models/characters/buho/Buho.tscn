@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://gp518k65kbn1"]
+[gd_scene load_steps=3 format=3 uid="uid://gp518k65kbn1"]
 
 [ext_resource type="PackedScene" uid="uid://dblpum3p4hvwm" path="res://models/characters/buho/buho.glb" id="1_l0rmn"]
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_dc064"]
+size = Vector3(0.565184, 0.753578, 1.28108)
+
+[node name="Node3D" type="CharacterBody3D"]
 
 [node name="buho" parent="." instance=ExtResource("1_l0rmn")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178975, 0.329691, 0)
+shape = SubResource("BoxShape3D_dc064")
