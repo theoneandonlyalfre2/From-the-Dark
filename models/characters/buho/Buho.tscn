@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://gp518k65kbn1"]
 
-[ext_resource type="PackedScene" uid="uid://bd3f05bp7tys3" path="res://models/characters/buho/buho.glb" id="1_l0rmn"]
+[ext_resource type="PackedScene" uid="uid://dblpum3p4hvwm" path="res://models/characters/buho/buho.glb" id="1_l0rmn"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="buho" parent="." instance=ExtResource("1_l0rmn")]
-transform = Transform3D(0.234, 0, 0, 0, 0.234, 0, 0, 0, 0.234, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

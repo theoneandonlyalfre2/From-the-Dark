@@ -175,7 +175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00092, -0.000885963, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00089, -0.000650287, -5.99979)
 
 [node name="Buho" parent="." instance=ExtResource("11_g1hsm")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.68725, 0.786597, -7.60139)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.68725, 0.606149, -7.60139)
 
 [node name="Barril" parent="." instance=ExtResource("12_txtv5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.33935, 0.412942, -6.48782)
