@@ -75,10 +75,6 @@ _origin_point = NodePath("..")
 [node name="Buho" parent="characters" instance=ExtResource("11_g1hsm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.68725, 0.606149, -7.60139)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_y6abf")
-autoplay = true
-
 [node name="models" type="Node" parent="."]
 
 [node name="map" type="Node" parent="models"]
@@ -199,3 +195,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00092, -0.000885963, 0)
 
 [node name="Lightbulb3" parent="models/objects/Lightbulb" instance=ExtResource("11_pdrg6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00089, -0.000650287, -5.99979)
+
+[node name="music" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource("7_y6abf")
+autoplay = true
