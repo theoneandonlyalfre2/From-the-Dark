@@ -52,142 +52,150 @@ size = Vector3(1, 2.72261, 10.2572)
 
 [node name="Lvl L" type="Node3D"]
 
-[node name="Tutorial3" parent="." instance=ExtResource("1_pmxye")]
-visible = false
+[node name="characters" type="Node" parent="."]
 
-[node name="player" parent="." instance=ExtResource("2_jsluf")]
+[node name="player" parent="characters" instance=ExtResource("2_jsluf")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.607635, 0.239266, -1.24953)
 
-[node name="Camera3D" type="Camera3D" parent="player"]
+[node name="Camera3D" type="Camera3D" parent="characters/player"]
 transform = Transform3D(-1, -2.907e-08, 1.48171e-07, 0, 0.981293, 0.192522, -1.50996e-07, 0.192522, -0.981293, 0, 0.857, -1.698)
 
-[node name="MarginContainer" parent="player" instance=ExtResource("3_k0o8a")]
+[node name="MarginContainer" parent="characters/player" instance=ExtResource("3_k0o8a")]
 visible = false
 
-[node name="MarginContainer2" parent="player" instance=ExtResource("4_kiuij")]
+[node name="MarginContainer2" parent="characters/player" instance=ExtResource("4_kiuij")]
 visible = false
 
-[node name="Ecolocalización" type="MeshInstance3D" parent="player"]
+[node name="Ecolocalización" type="MeshInstance3D" parent="characters/player"]
 visible = false
 mesh = ExtResource("5_71klk")
 script = ExtResource("6_5ihla")
 _origin_point = NodePath("..")
 
+[node name="Buho" parent="characters" instance=ExtResource("11_g1hsm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.68725, 0.606149, -7.60139)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_y6abf")
 autoplay = true
 
-[node name="Mapa" type="MultiMeshInstance3D" parent="."]
+[node name="models" type="Node" parent="."]
 
-[node name="suelo1" type="MeshInstance3D" parent="Mapa"]
+[node name="map" type="Node" parent="models"]
+
+[node name="Tutorial3" parent="models/map" instance=ExtResource("1_pmxye")]
+visible = false
+
+[node name="Mapa" type="MultiMeshInstance3D" parent="models/map"]
+
+[node name="suelo1" type="MeshInstance3D" parent="models/map/Mapa"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -1)
 material_override = SubResource("StandardMaterial3D_hfbkl")
 mesh = SubResource("PlaneMesh_fvtrl")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../../..")
 
-[node name="suelo2" type="MeshInstance3D" parent="Mapa"]
+[node name="suelo2" type="MeshInstance3D" parent="models/map/Mapa"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, -7)
 mesh = SubResource("PlaneMesh_fvtrl")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../../..")
 
-[node name="suelo3" type="MeshInstance3D" parent="Mapa"]
+[node name="suelo3" type="MeshInstance3D" parent="models/map/Mapa"]
 transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 5, 1, 0)
 material_override = SubResource("StandardMaterial3D_pug0t")
 mesh = SubResource("PlaneMesh_fvtrl")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../../..")
 
-[node name="suelo8" type="MeshInstance3D" parent="Mapa"]
+[node name="suelo8" type="MeshInstance3D" parent="models/map/Mapa"]
 transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 3, 1, -2)
 material_override = SubResource("StandardMaterial3D_jwauf")
 mesh = SubResource("PlaneMesh_fvtrl")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../../..")
 
-[node name="suelo9" type="MeshInstance3D" parent="Mapa"]
+[node name="suelo9" type="MeshInstance3D" parent="models/map/Mapa"]
 transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 13, 1, -8)
 material_override = SubResource("StandardMaterial3D_875hr")
 mesh = SubResource("PlaneMesh_fvtrl")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../../..")
 
-[node name="suelo4" type="MeshInstance3D" parent="Mapa"]
+[node name="suelo4" type="MeshInstance3D" parent="models/map/Mapa"]
 transform = Transform3D(-1, -7.64274e-15, -8.74228e-08, 0, -1, 8.74228e-08, -8.74228e-08, 8.74228e-08, 1, 5, 2, -1)
 mesh = SubResource("PlaneMesh_fvtrl")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../../..")
 
-[node name="suelo5" type="MeshInstance3D" parent="Mapa"]
+[node name="suelo5" type="MeshInstance3D" parent="models/map/Mapa"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 3.82137e-15, 4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 10, 1, -5)
 material_override = SubResource("StandardMaterial3D_woipw")
 mesh = SubResource("PlaneMesh_fvtrl")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../../..")
 
-[node name="suelo6" type="MeshInstance3D" parent="Mapa"]
+[node name="suelo6" type="MeshInstance3D" parent="models/map/Mapa"]
 transform = Transform3D(-4.37114e-08, 8.74228e-08, 1, 0, -1, 8.74228e-08, 1, 3.82137e-15, 4.37114e-08, 9, 2, -7)
 mesh = SubResource("PlaneMesh_fvtrl")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../../..")
 
-[node name="suelo7" type="MeshInstance3D" parent="Mapa"]
+[node name="suelo7" type="MeshInstance3D" parent="models/map/Mapa"]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 8, 1, -7)
 material_override = SubResource("StandardMaterial3D_bcwad")
 mesh = SubResource("PlaneMesh_fvtrl")
-skeleton = NodePath("../..")
+skeleton = NodePath("../../../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mapa"]
+[node name="StaticBody3D" type="StaticBody3D" parent="models/map/Mapa"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mapa/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="models/map/Mapa/StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_rt3bw")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Mapa"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="models/map/Mapa"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0.65, -4.136)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mapa/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="models/map/Mapa/StaticBody3D2"]
 shape = SubResource("BoxShape3D_e0v3u")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Mapa/StaticBody3D2"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="models/map/Mapa/StaticBody3D2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -4.35)
 shape = SubResource("BoxShape3D_e0v3u")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Mapa/StaticBody3D2"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="models/map/Mapa/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -2)
 shape = SubResource("BoxShape3D_e0v3u")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Mapa/StaticBody3D2"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="models/map/Mapa/StaticBody3D2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.52441, 0, 4.6)
 shape = SubResource("BoxShape3D_drtda")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Mapa/StaticBody3D2"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="models/map/Mapa/StaticBody3D2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.81372, 0, 1.63904)
 shape = SubResource("BoxShape3D_drtda")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="Mapa/StaticBody3D2"]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="models/map/Mapa/StaticBody3D2"]
 transform = Transform3D(1.91069e-15, 4.37114e-08, 1, 1, -4.37114e-08, 0, 4.37114e-08, 1, -4.37114e-08, -5.523, 1.85, 2.985)
 shape = SubResource("BoxShape3D_drtda")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="Mapa/StaticBody3D2"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="models/map/Mapa/StaticBody3D2"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -1.74144, 1.85, -1.33857)
 shape = SubResource("BoxShape3D_drtda")
 
-[node name="Lightbulb" parent="." instance=ExtResource("11_pdrg6")]
-transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0.999158, 1.95635, -1)
+[node name="objects" type="Node" parent="models"]
 
-[node name="Lightbulb2" parent="Lightbulb" instance=ExtResource("11_pdrg6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00092, -0.000885963, 0)
+[node name="Barril 3" parent="models/objects" instance=ExtResource("12_txtv5")]
+transform = Transform3D(0.654767, -0.755831, 3.30384e-08, 2.66894e-15, -4.37114e-08, -1, 0.755831, 0.654767, -2.86208e-08, 9.33511, 0.284031, -0.999062)
 
-[node name="Lightbulb3" parent="Lightbulb" instance=ExtResource("11_pdrg6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00089, -0.000650287, -5.99979)
-
-[node name="Buho" parent="." instance=ExtResource("11_g1hsm")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.68725, 0.606149, -7.60139)
-
-[node name="Barril" parent="." instance=ExtResource("12_txtv5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.33935, 0.412942, -6.48782)
-
-[node name="Barril2" parent="Barril" instance=ExtResource("12_txtv5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32046, 0, 6.12159)
-
-[node name="Gastank" parent="." instance=ExtResource("10_dwd87")]
+[node name="Gastank" parent="models/objects" instance=ExtResource("10_dwd87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79042, 0.105652, -0.43185)
 
-[node name="Gastank2" parent="Gastank" instance=ExtResource("10_dwd87")]
+[node name="Gastank2" parent="models/objects/Gastank" instance=ExtResource("10_dwd87")]
 transform = Transform3D(0.892594, 0, 0.450862, 0, 1, 0, -0.450862, 0, 0.892594, 2.90491, 0, -0.746041)
 
-[node name="Barril 3" parent="." instance=ExtResource("12_txtv5")]
-transform = Transform3D(0.654767, -0.755831, 3.30384e-08, 2.66894e-15, -4.37114e-08, -1, 0.755831, 0.654767, -2.86208e-08, 9.33511, 0.284031, -0.999062)
+[node name="Barril" parent="models/objects" instance=ExtResource("12_txtv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.33935, 0.412942, -6.48782)
+
+[node name="Barril2" parent="models/objects/Barril" instance=ExtResource("12_txtv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32046, 0, 6.12159)
+
+[node name="Lightbulb" parent="models/objects" instance=ExtResource("11_pdrg6")]
+transform = Transform3D(-1, 1.50996e-07, 0, -1.50996e-07, -1, 0, 0, 0, 1, 0.999158, 1.95635, -1)
+
+[node name="Lightbulb2" parent="models/objects/Lightbulb" instance=ExtResource("11_pdrg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00092, -0.000885963, 0)
+
+[node name="Lightbulb3" parent="models/objects/Lightbulb" instance=ExtResource("11_pdrg6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00089, -0.000650287, -5.99979)

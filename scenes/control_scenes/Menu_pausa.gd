@@ -23,10 +23,6 @@ func _ready():
 	menu_principal.pressed.connect(_on_menu_principal_presssed)
 
 ## Undefined.
-func _process(delta):
-	pass
-
-## Undefined.
 func _input(event):
 	if event.is_action_pressed("pausa"):
 		show()
