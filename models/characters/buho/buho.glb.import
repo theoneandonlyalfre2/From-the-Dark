@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bd3f05bp7tys3"
-path="res://.godot/imported/buho.glb-7ffd4af7fe22f65d516ff8f7d5115ab2.scn"
+path="res://.godot/imported/buho.glb-f3bc61fa1756664d24a60b590dcde615.scn"
 
 [deps]
 
-source_file="res://resources/Props/buho.glb"
-dest_files=["res://.godot/imported/buho.glb-7ffd4af7fe22f65d516ff8f7d5115ab2.scn"]
+source_file="res://models/characters/buho/buho.glb"
+dest_files=["res://.godot/imported/buho.glb-f3bc61fa1756664d24a60b590dcde615.scn"]
 
 [params]
 

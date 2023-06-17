@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d25g4tjeoeaq8"]
+[gd_scene load_steps=24 format=3 uid="uid://dyut84784fvso"]
 
 [ext_resource type="PackedScene" uid="uid://ce6jxc018trp1" path="res://scenes/tutorial_scenes/Tutorial3.glb" id="1_pmxye"]
 [ext_resource type="PackedScene" uid="uid://ya21rrd7oioh" path="res://models/characters/player/player.tscn" id="2_jsluf"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://x0ogodopx0rg" path="res://resources/textures/Concreto/Concrete1/concrete-tiles-diffuse.jpg" id="8_ellls"]
 [ext_resource type="Texture2D" uid="uid://ra16rmap2ru0" path="res://resources/textures/Concreto/Floor/textures/concrete_floor_02_rough_1k.jpg" id="8_ks83k"]
 [ext_resource type="PackedScene" uid="uid://c61wsifl0is0d" path="res://resources/Props/lvl_l.tscn" id="10_dwd87"]
-[ext_resource type="PackedScene" uid="uid://hlyfpbhufvhe" path="res://resources/Props/Buho.tscn" id="11_g1hsm"]
+[ext_resource type="PackedScene" uid="uid://gp518k65kbn1" path="res://models/characters/buho/Buho.tscn" id="11_g1hsm"]
 [ext_resource type="PackedScene" uid="uid://kay0mjg3tqs7" path="res://resources/Props/light-bulb.tscn" id="11_pdrg6"]
 [ext_resource type="PackedScene" uid="uid://bn1h5rnqed6dl" path="res://resources/Props/Barril.tscn" id="12_txtv5"]
 
