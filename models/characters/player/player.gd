@@ -76,8 +76,9 @@ func _physics_process(delta):
 	
 func _unhandled_key_input(event:InputEvent):
 	if event.is_pressed() and event.keycode == KEY_F:
-		# Echolocation animation
-		$AnimationPlayer.play("Sonar")
+		if action1 == true:
+			# Echolocation animation
+			$AnimationPlayer.play("Sonar")
 	
 	if event.is_pressed() and event.keycode == KEY_D:
 		if action1 == true:
