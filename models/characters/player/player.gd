@@ -84,8 +84,14 @@ func _unhandled_key_input(event:InputEvent):
 		if action1 == true:
 			# Go up animation
 			$AnimationPlayer.play("Techo")
+			$AnimationPlayer.animation_set_next("Techo", "EnTecho")
 			action1 = false
 		else:
 			# Go down animation
 			$AnimationPlayer.play("NoTecho")
 			action1 = true
+			
+func _on_TechoFinished(anim_name: String):
+	if anim_name == "Techo":
+		# Reproducir la tercera animación en bucle
+		$AnimationPlayer.play("EnTecho")
