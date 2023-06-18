@@ -26,6 +26,8 @@ var tiempo_espera = 3
 var poder_cargado = true
 ## Time of space forbidden.
 var tiempo_espacio_prohibido = 1
+## Flag that tells if the key D was not alredy pressed
+var action1 = true
 
 # Define constants for movement and jumping.
 
@@ -74,5 +76,15 @@ func _physics_process(delta):
 	
 func _unhandled_key_input(event:InputEvent):
 	if event.is_pressed() and event.keycode == KEY_F:
-		# Flying animation
+		# Echolocation animation
 		$AnimationPlayer.play("Sonar")
+	
+	if event.is_pressed() and event.keycode == KEY_D:
+		if action1 == true:
+			# Go up animation
+			$AnimationPlayer.play("Techo")
+			action1 = false
+		else:
+			# Go down animation
+			$AnimationPlayer.play("NoTecho")
+			action1 = true
