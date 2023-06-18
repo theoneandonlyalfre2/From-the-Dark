@@ -71,3 +71,8 @@ func _physics_process(delta):
 
 	# Move the player based on their current velocity.
 	move_and_slide()
+	
+func _unhandled_key_input(event:InputEvent):
+	if event.is_pressed() and event.keycode == KEY_F:
+		# Flying animation
+		$AnimationPlayer.play("Sonar")
