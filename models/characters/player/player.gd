@@ -52,6 +52,9 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		velocity.y = JUMP_VELOCITY
 		audio_stream_player.play()
+		
+		# Flying animation
+		$AnimationPlayer.play("Volar")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
