@@ -28,6 +28,8 @@ var poder_cargado = true
 var tiempo_espacio_prohibido = 1
 ## Flag that tells if the key D was not alredy pressed
 var action1 = true
+## Flag that tells if the gravity is inverted
+var invGravity = false
 
 # Define constants for movement and jumping.
 
@@ -47,33 +49,49 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 ## Physics of the bat.
 func _physics_process(delta):
-	# Add the gravity.
-	velocity.y -= gravity * delta
+	if invGravity == false:
+		# Add the gravity.
+		velocity.y -= gravity * delta
 
-	# Handle jumping when the "ui_accept" action is pressed.
-	if Input.is_action_just_pressed("ui_accept"):
-		velocity.y = JUMP_VELOCITY
-		audio_stream_player.play()
+		# Handle jumping when the "ui_accept" action is pressed.
+		if Input.is_action_just_pressed("ui_accept"):
+			velocity.y = JUMP_VELOCITY
+			audio_stream_player.play()
+	
+			# Flying animation
+			$AnimationPlayer.play("Volar")
+
+		# Get the input direction and handle the movement/deceleration.
+		# As good practice, you should replace UI actions with custom gameplay actions.
+		var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
+		# Move the player based on the input direction or decelerate if no input is detected.
+		if direction:
+			velocity.x = -direction.x * SPEED
+			velocity.z = -direction.z * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
+
+		# Move the player based on their current velocity.
+		move_and_slide()
 		
-		# Flying animation
-		$AnimationPlayer.play("Volar")
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
-	# Move the player based on the input direction or decelerate if no input is detected.
-	if direction:
-		velocity.x = -direction.x * SPEED
-		velocity.z = -direction.z * SPEED
+		# Changing gravity
+		if Input.is_action_just_pressed("ui_up_and_down"):
+			invGravity = true
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		# Reversing the gravity.
+		velocity.y += gravity * delta
+		
+		# Move the player based on their current velocity.
+		move_and_slide()
+		
+		# Changing gravity
+		if Input.is_action_just_pressed("ui_up_and_down"):
+			invGravity = false
 
-	# Move the player based on their current velocity.
-	move_and_slide()
-	
+## Defining keys from the animations
 func _unhandled_key_input(event:InputEvent):
 	if event.is_pressed() and event.keycode == KEY_F:
 		if action1 == true:
@@ -91,7 +109,3 @@ func _unhandled_key_input(event:InputEvent):
 			$AnimationPlayer.play("NoTecho")
 			action1 = true
 			
-func _on_TechoFinished(anim_name: String):
-	if anim_name == "Techo":
-		# Reproducir la tercera animación en bucle
-		$AnimationPlayer.play("EnTecho")
