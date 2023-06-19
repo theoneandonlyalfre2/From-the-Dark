@@ -108,4 +108,3 @@ func _unhandled_key_input(event:InputEvent):
 			# Go down animation
 			$AnimationPlayer.play("NoTecho")
 			action1 = true
-			
