@@ -28,7 +28,7 @@ func _on_menu_principal_presssed():
 
 ## Undefined.
 func _on_retry_presssed():
-	get_tree().change_scene_to_file("res://scenes/control_scenes/node_3d.tscn")
+	get_tree().change_scene_to_file("res://scenes/new_map_scenes/MapaNuevo.tscn")
 
 ## Undefined.
 func _on_quit_presssed(): 
