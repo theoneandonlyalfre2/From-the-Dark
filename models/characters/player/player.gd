@@ -33,6 +33,10 @@ var invGravity = false
 
 # Define constants for movement and jumping.
 
+##
+var mouse_sensitivity=0.2
+##
+@onready var pivot=$Pivot
 ## Speed of the bat.
 const SPEED = 5.0
 ## Jump velocity of the bat.
@@ -68,8 +72,8 @@ func _physics_process(delta):
 
 		# Move the player based on the input direction or decelerate if no input is detected.
 		if direction:
-			velocity.x = -direction.x * SPEED
-			velocity.z = -direction.z * SPEED
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -98,7 +102,7 @@ func _unhandled_key_input(event:InputEvent):
 			# Echolocation animation
 			$AnimationPlayer.play("Sonar")
 	
-	if event.is_pressed() and event.keycode == KEY_D:
+	if event.is_pressed() and event.keycode == KEY_G:
 		if action1 == true:
 			# Go up animation
 			$AnimationPlayer.play("Techo")
@@ -108,3 +112,15 @@ func _unhandled_key_input(event:InputEvent):
 			# Go down animation
 			$AnimationPlayer.play("NoTecho")
 			action1 = true
+func _input(event):
+	if Input.is_action_just_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if event is InputEventMouseMotion:
+		# Rotation of camera relative to mouse
+		rotate_y(deg_to_rad(-event.relative.x*mouse_sensitivity))
+		pivot.rotate_x(deg_to_rad(-event.relative.y*mouse_sensitivity))
+		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+		
+
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

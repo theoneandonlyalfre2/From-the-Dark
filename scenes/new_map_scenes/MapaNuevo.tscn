@@ -1,7 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://xhqo2d6yi1wp"]
+[gd_scene load_steps=26 format=3 uid="uid://xhqo2d6yi1wp"]
 
 [ext_resource type="Texture2D" uid="uid://deq47rli6qimw" path="res://resources/textures/Concreto/Concrete1/concrete tiles-AO.jpg" id="1_b42x3"]
 [ext_resource type="Texture2D" uid="uid://x0ogodopx0rg" path="res://resources/textures/Concreto/Concrete1/concrete-tiles-diffuse.jpg" id="2_lcohn"]
+[ext_resource type="PackedScene" uid="uid://ya21rrd7oioh" path="res://models/characters/player/player.tscn" id="3_y75v5"]
+[ext_resource type="Shader" path="res://resources/pulse.gdshader" id="4_kk3e3"]
+[ext_resource type="Script" path="res://scenes/new_map_scenes/Ecolocalzación.gd" id="5_t0sqn"]
+[ext_resource type="PackedScene" uid="uid://gp518k65kbn1" path="res://models/characters/buho/Buho.tscn" id="6_2it1t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s0hp"]
 albedo_texture = ExtResource("1_b42x3")
@@ -49,6 +53,26 @@ albedo_texture = ExtResource("1_b42x3")
 albedo_texture = ExtResource("1_b42x3")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_q0pid"]
+
+[sub_resource type="Environment" id="Environment_x3e4x"]
+ambient_light_source = 2
+fog_enabled = true
+fog_light_color = Color(0.113725, 0.117647, 0.121569, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aenpy"]
+render_priority = 0
+shader = ExtResource("4_kk3e3")
+shader_parameter/pulse_width = 1.0
+shader_parameter/color = Color(1, 0.521569, 0.521569, 1)
+shader_parameter/box_dimensions = Vector3(1, 1, 1)
+shader_parameter/roundness = 1.0
+shader_parameter/shape_transform = Projection(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1)
+shader_parameter/size = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_fu0p4"]
+material = SubResource("ShaderMaterial_aenpy")
+flip_faces = true
+size = Vector2(3, 3)
 
 [node name="Node3D" type="Node3D"]
 
@@ -758,6 +782,21 @@ size = Vector3(0, 2, 3)
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -29.5005, 0, -16.3934)
 shape = SubResource("WorldBoundaryShape3D_q0pid")
 
-[node name="Techo" type="CollisionShape3D" parent="Mapa/CSGCombiner3D/StaticBody3D"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -29.501, 2, -16.393)
-shape = SubResource("WorldBoundaryShape3D_q0pid")
+[node name="Enviro" type="Node3D" parent="Mapa/CSGCombiner3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Mapa/CSGCombiner3D/Enviro"]
+environment = SubResource("Environment_x3e4x")
+
+[node name="Characters" type="Node" parent="."]
+
+[node name="player" parent="Characters" instance=ExtResource("3_y75v5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.988289, 0.201585, -0.918341)
+
+[node name="Ecolocalzación" type="MeshInstance3D" parent="Characters/player"]
+visible = false
+mesh = SubResource("QuadMesh_fu0p4")
+script = ExtResource("5_t0sqn")
+_origin_point = NodePath("..")
+
+[node name="Buho" parent="Characters" instance=ExtResource("6_2it1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4046, 0.206023, -30.277)
