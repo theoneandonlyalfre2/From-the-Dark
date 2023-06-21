@@ -94,15 +94,13 @@ func _physics_process(delta):
 		# Changing gravity
 		if Input.is_action_just_pressed("ui_up_and_down"):
 			invGravity = false
-
-## Defining keys from the animations
-func _unhandled_key_input(event:InputEvent):
-	if event.is_pressed() and event.keycode == KEY_F:
+	
+	if Input.is_action_just_pressed("ui_echolocation"):
 		if action1 == true:
 			# Echolocation animation
 			$AnimationPlayer.play("Sonar")
 	
-	if event.is_pressed() and event.keycode == KEY_G:
+	if Input.is_action_just_pressed("ui_up_and_down"):
 		if action1 == true:
 			# Go up animation
 			$AnimationPlayer.play("Techo")
@@ -112,6 +110,7 @@ func _unhandled_key_input(event:InputEvent):
 			# Go down animation
 			$AnimationPlayer.play("NoTecho")
 			action1 = true
+
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
