@@ -10,6 +10,8 @@ class_name Player
 
 ## Load reference to an AudioStreamPlayer node.
 @onready var audio_stream_player = $AudioStreamPlayer
+## Load reference to a Pivot node.
+@onready var pivot=$Pivot
 
 # Define variables to track the state of the player's abilities and various time intervals.
 
@@ -27,13 +29,13 @@ var tiempo_espacio_prohibido = 1
 var action1 = true
 ## Flag that tells if the gravity is inverted
 var invGravity = false
+## Sensitivity of the mouse
+var mouse_sensitivity=0.2
+## Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Define constants for movement and jumping.
 
-##
-var mouse_sensitivity=0.2
-##
-@onready var pivot=$Pivot
 ## Speed of the bat.
 const SPEED = 5.0
 ## Jump velocity of the bat.
@@ -42,9 +44,6 @@ const JUMP_VELOCITY = 3
 const Alt_min = 1
 ## Max of height.
 const Alt_max = 3
-
-## Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Define the methods.
 
@@ -58,7 +57,6 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.y = JUMP_VELOCITY
 			audio_stream_player.play()
-	
 			# Flying animation
 			$AnimationPlayer.play("Volar")
 
@@ -84,6 +82,9 @@ func _physics_process(delta):
 	else:
 		# Reversing the gravity.
 		velocity.y += gravity * delta
+		# Stoping the bat.
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
 		# Move the player based on their current velocity.
 		move_and_slide()
@@ -108,6 +109,7 @@ func _physics_process(delta):
 			$AnimationPlayer.play("NoTecho")
 			action1 = true
 
+## Undefined
 func _input(event):
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -117,6 +119,6 @@ func _input(event):
 		pivot.rotate_x(deg_to_rad(-event.relative.y*mouse_sensitivity))
 		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 		
-
+## Undefined
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
