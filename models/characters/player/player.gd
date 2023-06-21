@@ -11,9 +11,6 @@ class_name Player
 ## Load reference to an AudioStreamPlayer node.
 @onready var audio_stream_player = $AudioStreamPlayer
 
-## Load a reference to a poder.tscn scene.
-var Poder = preload("res://models/characters/player/poder.tscn")
-
 # Define variables to track the state of the player's abilities and various time intervals.
 
 ## Power of the bat activated.
