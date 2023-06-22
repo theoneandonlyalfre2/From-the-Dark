@@ -9,7 +9,8 @@ class_name Player
 # Load references
 
 ## Load reference to an AudioStreamPlayer node.
-@onready var audio_stream_player = $AudioStreamPlayer
+@onready var volar = $Volar
+@onready var screech =$Screech
 ## Load reference to a Pivot node.
 @onready var pivot=$Pivot
 
@@ -56,7 +57,7 @@ func _physics_process(delta):
 		# Handle jumping when the "ui_accept" action is pressed.
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.y = JUMP_VELOCITY
-			audio_stream_player.play()
+			volar.play()
 			# Flying animation
 			$AnimationPlayer.play("Volar")
 
@@ -93,8 +94,9 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up_and_down"):
 			invGravity = false
 	
-	if Input.is_action_just_pressed("ui_echolocation"):
+	if Input.is_action_pressed("ui_echolocation"):
 		if action1 == true:
+			screech.play()
 			# Echolocation animation
 			$AnimationPlayer.play("Sonar")
 	

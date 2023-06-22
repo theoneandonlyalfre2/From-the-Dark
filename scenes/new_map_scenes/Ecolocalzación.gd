@@ -7,8 +7,8 @@ extends MeshInstance3D
 func _ready():
 	show()
 
-func _unhandled_key_input(event:InputEvent):
-	if event.is_pressed() and event.keycode == KEY_F:
+func _input(event):
+	if Input.is_action_just_pressed("ui_echolocation"):
 		shader.set_shader_parameter("shape_transform", origin_point.global_transform)
 		var tween := create_tween()
 		tween.tween_method(_update_shader, 0.0, 50.0, 10.0)
