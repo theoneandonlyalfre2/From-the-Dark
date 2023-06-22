@@ -802,6 +802,8 @@ _origin_point = NodePath("..")
 [node name="Buho" parent="Characters" instance=ExtResource("6_2it1t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4046, 0.206023, -30.277)
 
-[node name="Main_Theme" type="AudioStreamPlayer" parent="."]
+[node name="Música" type="Node" parent="."]
+
+[node name="Main_Theme" type="AudioStreamPlayer" parent="Música"]
 stream = ExtResource("7_8jvsv")
 autoplay = true
