@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://xhqo2d6yi1wp"]
+[gd_scene load_steps=27 format=3 uid="uid://xhqo2d6yi1wp"]
 
 [ext_resource type="Texture2D" uid="uid://deq47rli6qimw" path="res://resources/textures/Concreto/Concrete1/concrete tiles-AO.jpg" id="1_b42x3"]
 [ext_resource type="Texture2D" uid="uid://x0ogodopx0rg" path="res://resources/textures/Concreto/Concrete1/concrete-tiles-diffuse.jpg" id="2_lcohn"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://resources/pulse.gdshader" id="4_kk3e3"]
 [ext_resource type="Script" path="res://scenes/new_map_scenes/Ecolocalzación.gd" id="5_t0sqn"]
 [ext_resource type="PackedScene" uid="uid://gp518k65kbn1" path="res://models/characters/buho/Buho.tscn" id="6_2it1t"]
+[ext_resource type="AudioStream" uid="uid://b707rr1hpuu8l" path="res://audio/music/Confusion.mp3" id="7_8jvsv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s0hp"]
 albedo_texture = ExtResource("1_b42x3")
@@ -800,3 +801,7 @@ _origin_point = NodePath("..")
 
 [node name="Buho" parent="Characters" instance=ExtResource("6_2it1t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4046, 0.206023, -30.277)
+
+[node name="Main_Theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8jvsv")
+autoplay = true
