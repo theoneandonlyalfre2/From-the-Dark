@@ -113,8 +113,6 @@ func _physics_process(delta):
 
 ## Undefined
 func _input(event):
-	if Input.is_action_just_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if event is InputEventMouseMotion:
 		# Rotation of camera relative to mouse
 		rotate_y(deg_to_rad(-event.relative.x*mouse_sensitivity))
