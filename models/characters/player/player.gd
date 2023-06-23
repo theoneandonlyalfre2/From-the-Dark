@@ -118,7 +118,7 @@ func _input(event):
 		# Rotation of camera relative to mouse
 		rotate_y(deg_to_rad(-event.relative.x*mouse_sensitivity))
 		pivot.rotate_x(deg_to_rad(-event.relative.y*mouse_sensitivity))
-		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-80), deg_to_rad(40))
 		
 ## Undefined
 func _ready():
