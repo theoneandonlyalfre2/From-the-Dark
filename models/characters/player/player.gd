@@ -95,6 +95,7 @@ func _physics_process(delta):
 			invGravity = false
 	
 	if Input.is_action_pressed("ui_echolocation"):
+		get_tree().call_group("enemies", "update_target_location", self.global_transform.origin)
 		if action1 == true:
 			screech.play()
 			# Echolocation animation
