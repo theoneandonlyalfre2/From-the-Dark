@@ -7,7 +7,7 @@ extends MeshInstance3D
 func _ready():
 	show()
 
-func _input(event):
+func _input(_event):
 	if Input.is_action_just_pressed("ui_echolocation"):
 		shader.set_shader_parameter("shape_transform", origin_point.global_transform)
 		var tween := create_tween()

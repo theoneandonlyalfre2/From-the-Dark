@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://xhqo2d6yi1wp"]
+[gd_scene load_steps=31 format=3 uid="uid://xhqo2d6yi1wp"]
 
 [ext_resource type="Texture2D" uid="uid://deq47rli6qimw" path="res://resources/textures/Concreto/Concrete1/concrete tiles-AO.jpg" id="1_b42x3"]
+[ext_resource type="Script" path="res://scenes/new_map_scenes/MapaNuevo.gd" id="1_jrbdp"]
 [ext_resource type="Texture2D" uid="uid://x0ogodopx0rg" path="res://resources/textures/Concreto/Concrete1/concrete-tiles-diffuse.jpg" id="2_lcohn"]
 [ext_resource type="PackedScene" uid="uid://ya21rrd7oioh" path="res://models/characters/player/player.tscn" id="3_y75v5"]
 [ext_resource type="Shader" path="res://resources/pulse.gdshader" id="4_kk3e3"]
@@ -12,21 +13,6 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7s0hp"]
 albedo_texture = ExtResource("1_b42x3")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vx5q"]
-albedo_texture = ExtResource("2_lcohn")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhv71"]
-albedo_texture = ExtResource("2_lcohn")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awv12"]
-albedo_texture = ExtResource("2_lcohn")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrud3"]
-albedo_texture = ExtResource("2_lcohn")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yid1p"]
-albedo_texture = ExtResource("2_lcohn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51swv"]
 albedo_texture = ExtResource("1_b42x3")
@@ -55,6 +41,26 @@ albedo_texture = ExtResource("1_b42x3")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2omth"]
 albedo_texture = ExtResource("1_b42x3")
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_1bmay"]
+vertices = PackedVector3Array(-34.5, 0.5, -26, -34.25, 0.5, -26, -33.25, 0.5, -26.25, -33.25, 0.5, -33.5, -42, 0.5, -33.5, -42, 0.5, -26.25, -50.5, 0.5, -26.25, -49.5, 0.5, -26, -49.25, 0.5, -26, -42, 0.5, -26.25, -42, 0.5, -33.5, -50.5, 0.5, -33.5, -15.5, 0.5, -25.75, -15.5, 0.5, -24.25, -7.5, 0.5, -24, -7.5, 0.5, -24, -6.25, 0.5, -24, 1.75, 0.5, -24.25, 1.75, 0.5, -31.5, -7, 0.5, -31.5, -7, 0.5, -31.5, -15.5, 0.5, -31.5, -15.5, 0.5, -25.75, -7.5, 0.5, -24, -54, 0.5, -24.25, -54, 0.5, -25.5, -54.25, 0.5, -28.5, -61.5, 0.5, -28.5, -61.5, 0.5, -21.25, -54.25, 0.5, -21.25, -30.75, 0.5, -24.5, -30.5, 0.5, -24, -30.25, 0.5, -24, -21.75, 0.5, -24.25, -24.75, 0.5, -25.5, -21.5, 0.5, -22.75, -22, 0.5, -22.5, -22, 0.5, -22.25, -21.5, 0.5, -22, -21.5, 0.5, -13.75, -22, 0.5, -13.5, -22, 0.5, -13.25, -21.5, 0.5, -13, -20.25, 0.5, -13.5, -30, 0.5, -11.5, -30.25, 0.5, -12, -30.5, 0.5, -12, -30.75, 0.5, -11.5, -31, 0.5, -10.25, -20.25, 0.5, -2, -19.75, 0.5, -2.25, -19.75, 0.5, -2.5, -20.25, 0.5, -2.75, -34, 0.5, -25.5, -34.25, 0.5, -26, -34.5, 0.5, -26, -34.75, 0.5, -25.5, -49, 0.5, -25.5, -49.25, 0.5, -26, -49.5, 0.5, -26, -49.75, 0.5, -25.5, -20.25, 0.5, -13.5, -20.25, 0.5, -24, -21.5, 0.5, -22, -21.5, 0.5, -13.75, -20.25, 0.5, -2, -20.25, 0.5, -2.75, -21.5, 0.5, 0.25, -40, 0.5, 0.5, -40.25, 0.5, -7.25, -41.75, 0.5, -7.25, -41.5, 0.5, 1.75, -20.25, 0.5, -24, -21.5, 0.5, -22.75, -21.5, 0.5, -22, -20.25, 0.5, -24, -21.75, 0.5, -24.25, -21.5, 0.5, -22.75, -40, 0.5, 0.5, -41.5, 0.5, 1.75, -31, 0.5, 1.5, -30.75, 0.5, 0.5, -49.75, 0.5, -25.5, -54, 0.5, -25.5, -54, 0.5, -24.25, -20.25, 0.5, -24, -15.5, 0.5, -24.25, -15.5, 0.5, -25.75, -24.75, 0.5, -25.5, -21.75, 0.5, -24.25, -20.25, 0.5, 1.5, -20.25, 0.5, -2, -21.5, 0.5, 0.25, -49, 0.5, -25.5, -49.75, 0.5, -25.5, -54, 0.5, -24.25, -49, 0.5, -25.5, -54, 0.5, -24.25, -42.5, 0.5, -24.5, -42, 0.5, -25.5, -21.5, 0.5, 0.25, -30.75, 0.5, 0.5, -31, 0.5, 1.5, -20.25, 0.5, 1.5, -34.75, 0.5, -25.5, -42, 0.5, -25.5, -42.5, 0.5, -24.5, -30.75, 0.5, -24.5, -30, 0.5, -11.5, -31, 0.5, -10.25, -21.75, 0.5, -10.25, -21.75, 0.5, -11.5, -34, 0.5, -25.5, -34.75, 0.5, -25.5, -30.75, 0.5, -24.5, -24.75, 0.5, -25.5, -34, 0.5, -25.5, -30.75, 0.5, -24.5, -21.75, 0.5, -11.5, -21.75, 0.5, -10.25, -21.5, 0.5, 0.25, -20.25, 0.5, -2.75, -20.25, 0.5, -13.5, -21.5, 0.5, -13, -40, 0.5, -11.5, -40, 0.5, -10.25, -31, 0.5, -10.25, -30.75, 0.5, -11.5, 4.25, 0.5, -18.25, 4.5, 0.5, -14.25, 5.75, 0.5, -14.25, 5.75, 0.5, -25.5, 4.5, 0.5, -25.5, -30, 0.5, -23.5, -30.25, 0.5, -24, -30.5, 0.5, -24, -31.5, 0.5, -23.75, -31.5, 0.5, -12.25, -22.25, 0.5, -12.25, -22, 0.5, -13.25, -22, 0.5, -13.5, -22, 0.5, -22.25, -22, 0.5, -22.5, -22.25, 0.5, -23.5, -30, 0.5, -23.5, -31.5, 0.5, -12.25, -30.5, 0.5, -12, -30.25, 0.5, -12, -30.25, 0.5, -12, -22.25, 0.5, -12.25, -22, 0.5, -13.5, -22, 0.5, -22.25, -30, 0.5, -23.5, -31.5, 0.5, -12.25, -6.25, 0.5, -17.5, -5.75, 0.5, -17.75, -5.75, 0.5, -18, -6.25, 0.5, -18.25, -6.25, 0.5, -7.75, -6.25, 0.5, -17.5, -7.5, 0.5, -13, -7.5, 0.5, -6.75, -8, 0.5, -13.75, -8, 0.5, -13.25, -7.5, 0.5, -13, -7.5, 0.5, -14, -6, 0.5, -6.25, -6.25, 0.5, -7.75, -7.5, 0.5, -6.75, -7.5, 0.5, -0.25, -6.25, 0.5, -0.25, -6.25, 0.5, -18.25, -6.25, 0.5, -24, -7.5, 0.5, -24, -7.5, 0.5, -14, 0.25, 0.5, -6.25, 0.5, 0.5, -0.25, 1.75, 0.5, -0.25, 1.75, 0.5, -7.5, -6.25, 0.5, -17.5, -6.25, 0.5, -18.25, -7.5, 0.5, -14, -7.5, 0.5, -13, 0.25, 0.5, -6.25, 1.75, 0.5, -7.5, -6.25, 0.5, -7.75, -6, 0.5, -6.25, -8.25, 0.5, -20.25, -8, 0.5, -21.25, -8.25, 0.5, -22.5, -11.75, 0.5, -22.5, -11.75, 0.5, -20.25, -5.5, 0.5, -19, -5.75, 0.5, -18, -5.75, 0.5, -17.75, -5.5, 0.5, -12.75, 3.75, 0.5, -12.75, 3.75, 0.5, -19, -41.75, 0.5, -7.25, -40.25, 0.5, -7.25, -40, 0.5, -10.25, -40, 0.5, -10.25, -40, 0.5, -11.5, -40.25, 0.5, -14.5, -45.5, 0.5, -14.5, -45.5, 0.5, -7.25, -41.75, 0.5, -7.25, -19.75, 0.5, -2.5, -19.75, 0.5, -2.25, -19.5, 0.5, -1.25, -8.25, 0.5, -1.25, -8.25, 0.5, -7.25, -19.5, 0.5, -8.25, -8, 0.5, -13.25, -8, 0.5, -13.75, -8.25, 0.5, -14.5, -19.5, 0.5, -14.5, -19.5, 0.5, -8.25, -8.25, 0.5, -7.25)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 5), PackedInt32Array(3, 5, 4), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 11), PackedInt32Array(8, 11, 9), PackedInt32Array(9, 11, 10), PackedInt32Array(14, 13, 12), PackedInt32Array(15, 19, 16), PackedInt32Array(16, 19, 17), PackedInt32Array(17, 19, 18), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(24, 29, 25), PackedInt32Array(25, 29, 26), PackedInt32Array(26, 29, 28), PackedInt32Array(26, 28, 27), PackedInt32Array(31, 30, 32), PackedInt32Array(32, 30, 34), PackedInt32Array(32, 34, 33), PackedInt32Array(36, 35, 37), PackedInt32Array(37, 35, 38), PackedInt32Array(40, 39, 41), PackedInt32Array(41, 39, 42), PackedInt32Array(42, 39, 43), PackedInt32Array(45, 44, 46), PackedInt32Array(46, 44, 47), PackedInt32Array(47, 44, 48), PackedInt32Array(50, 49, 51), PackedInt32Array(51, 49, 52), PackedInt32Array(54, 53, 55), PackedInt32Array(55, 53, 56), PackedInt32Array(58, 57, 59), PackedInt32Array(59, 57, 60), PackedInt32Array(64, 63, 61), PackedInt32Array(61, 63, 62), PackedInt32Array(67, 66, 65), PackedInt32Array(69, 68, 70), PackedInt32Array(70, 68, 71), PackedInt32Array(74, 73, 72), PackedInt32Array(77, 76, 75), PackedInt32Array(81, 80, 78), PackedInt32Array(78, 80, 79), PackedInt32Array(84, 83, 82), PackedInt32Array(89, 88, 85), PackedInt32Array(85, 88, 86), PackedInt32Array(86, 88, 87), PackedInt32Array(92, 91, 90), PackedInt32Array(95, 94, 93), PackedInt32Array(99, 98, 96), PackedInt32Array(96, 98, 97), PackedInt32Array(101, 100, 102), PackedInt32Array(102, 100, 103), PackedInt32Array(105, 104, 106), PackedInt32Array(106, 104, 107), PackedInt32Array(111, 110, 108), PackedInt32Array(108, 110, 109), PackedInt32Array(114, 113, 112), PackedInt32Array(117, 116, 115), PackedInt32Array(123, 122, 118), PackedInt32Array(118, 122, 119), PackedInt32Array(119, 122, 121), PackedInt32Array(119, 121, 120), PackedInt32Array(125, 124, 126), PackedInt32Array(126, 124, 127), PackedInt32Array(129, 128, 130), PackedInt32Array(130, 128, 132), PackedInt32Array(130, 132, 131), PackedInt32Array(134, 133, 135), PackedInt32Array(135, 133, 136), PackedInt32Array(136, 133, 137), PackedInt32Array(140, 139, 138), PackedInt32Array(142, 141, 143), PackedInt32Array(143, 141, 144), PackedInt32Array(147, 146, 145), PackedInt32Array(149, 148, 150), PackedInt32Array(150, 148, 153), PackedInt32Array(150, 153, 151), PackedInt32Array(151, 153, 152), PackedInt32Array(155, 154, 156), PackedInt32Array(156, 154, 157), PackedInt32Array(161, 160, 158), PackedInt32Array(158, 160, 159), PackedInt32Array(162, 165, 163), PackedInt32Array(163, 165, 164), PackedInt32Array(167, 166, 168), PackedInt32Array(168, 166, 170), PackedInt32Array(168, 170, 169), PackedInt32Array(172, 171, 173), PackedInt32Array(173, 171, 174), PackedInt32Array(176, 175, 177), PackedInt32Array(177, 175, 178), PackedInt32Array(180, 179, 181), PackedInt32Array(181, 179, 182), PackedInt32Array(186, 185, 183), PackedInt32Array(183, 185, 184), PackedInt32Array(188, 187, 189), PackedInt32Array(189, 187, 191), PackedInt32Array(189, 191, 190), PackedInt32Array(193, 192, 194), PackedInt32Array(194, 192, 195), PackedInt32Array(195, 192, 197), PackedInt32Array(195, 197, 196), PackedInt32Array(200, 199, 198), PackedInt32Array(202, 201, 203), PackedInt32Array(203, 201, 206), PackedInt32Array(203, 206, 205), PackedInt32Array(203, 205, 204), PackedInt32Array(208, 207, 209), PackedInt32Array(209, 207, 212), PackedInt32Array(209, 212, 211), PackedInt32Array(209, 211, 210), PackedInt32Array(214, 213, 215), PackedInt32Array(215, 213, 218), PackedInt32Array(215, 218, 217), PackedInt32Array(215, 217, 216)]
+agent_radius = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vx5q"]
+albedo_texture = ExtResource("2_lcohn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhv71"]
+albedo_texture = ExtResource("2_lcohn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awv12"]
+albedo_texture = ExtResource("2_lcohn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrud3"]
+albedo_texture = ExtResource("2_lcohn")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yid1p"]
+albedo_texture = ExtResource("2_lcohn")
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_q0pid"]
 
 [sub_resource type="Environment" id="Environment_x3e4x"]
@@ -78,716 +84,794 @@ flip_faces = true
 size = Vector2(3, 3)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_jrbdp")
 
 [node name="Mapa" type="Node" parent="."]
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Mapa"]
+[node name="Ceiling" type="CSGCombiner3D" parent="Mapa"]
 
-[node name="Pasillo1" type="Node" parent="Mapa/CSGCombiner3D"]
+[node name="Pasillo1" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4)
-material_override = SubResource("StandardMaterial3D_7s0hp")
-use_collision = true
-size = Vector3(2, 0, 8)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo1"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/Pasillo1"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 1, 2, -4)
 material_override = SubResource("StandardMaterial3D_7s0hp")
 use_collision = true
 size = Vector3(2, 0, 8)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -4)
-material_override = SubResource("StandardMaterial3D_0vx5q")
-use_collision = true
-size = Vector3(0, 2, 8)
+[node name="Pasillo2" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -3)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 6)
-
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
-material_override = SubResource("StandardMaterial3D_awv12")
-use_collision = true
-size = Vector3(2, 2, 0)
-
-[node name="Pasillo2" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0, -7)
-material_override = SubResource("StandardMaterial3D_7s0hp")
-use_collision = true
-size = Vector3(2, 0, 6)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo2"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/Pasillo2"]
 transform = Transform3D(-4.37114e-08, -8.74228e-08, -1, 0, -1, 8.74228e-08, -1, 3.82137e-15, 4.37114e-08, -3, 2, -7)
 material_override = SubResource("StandardMaterial3D_7s0hp")
 use_collision = true
 size = Vector3(2, 0, 6)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -8)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(8, 2, 0)
+[node name="Pasillo3" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3, 1, -6)
-material_override = SubResource("StandardMaterial3D_yid1p")
-use_collision = true
-size = Vector3(6, 2, 0)
-
-[node name="Pasillo3" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -12.0052)
-material_override = SubResource("StandardMaterial3D_51swv")
-use_collision = true
-size = Vector3(2, 0, 24)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo3"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/Pasillo3"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -7, 2, -12.005)
 material_override = SubResource("StandardMaterial3D_51swv")
 use_collision = true
 size = Vector3(2, 0, 24)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -3)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 6)
+[node name="Pasillo4" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -12.75)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 9.5)
-
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -21.25)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 5.5)
-
-[node name="Pared4" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo3"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 1, -17.5063)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 7)
-
-[node name="Pared5" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo3"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 1, -23)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 2)
-
-[node name="Pared6" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo3"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 1, -6.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 13)
-
-[node name="Pared7" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 0)
-material_override = SubResource("StandardMaterial3D_awv12")
-use_collision = true
-size = Vector3(2, 2, 0)
-
-[node name="Pasillo4" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -12)
-material_override = SubResource("StandardMaterial3D_7s0hp")
-use_collision = true
-size = Vector3(2, 0, 28)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo4"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/Pasillo4"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -21, 2, -12)
 material_override = SubResource("StandardMaterial3D_7s0hp")
 use_collision = true
 size = Vector3(2, 0, 28)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, -13.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 21)
+[node name="Pasillo5" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 0)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 4)
-
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo4"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.978, 1, -23.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 1)
-
-[node name="Pared4" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo4"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.978, 1, -12.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 1)
-
-[node name="Pared5" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo4"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22, 1, -18)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 8)
-
-[node name="Pared6" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo4"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22, 1, -5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 10)
-
-[node name="Pasillo5" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -11)
-material_override = SubResource("StandardMaterial3D_5ht1q")
-use_collision = true
-size = Vector3(18, 0, 2)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo5"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/Pasillo5"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -31, 2, -11)
 material_override = SubResource("StandardMaterial3D_5ht1q")
 use_collision = true
 size = Vector3(18, 0, 2)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5, 1, -12)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(9, 2, 0)
+[node name="Pasillo6" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo5"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -31, 1, -10)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(18, 2, 0)
-
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 1, -12)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(8, 2, 0)
-
-[node name="Pasillo6" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 1)
-material_override = SubResource("StandardMaterial3D_6pq6l")
-use_collision = true
-size = Vector3(18, 0, 2)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo6"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/Pasillo6"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -31, 2, 1)
 material_override = SubResource("StandardMaterial3D_6pq6l")
 use_collision = true
 size = Vector3(18, 0, 2)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo6"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -31, 1, 2)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(22, 2, 0)
+[node name="Pasillo7" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 1, 0)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(18, 2, 0)
-
-[node name="Pasillo7" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 0, -2.5)
-material_override = SubResource("StandardMaterial3D_83xxy")
-use_collision = true
-size = Vector3(2, 0, 9)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo7"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/Pasillo7"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -41, 2, -2.5)
 material_override = SubResource("StandardMaterial3D_83xxy")
 use_collision = true
 size = Vector3(2, 0, 9)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo7"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -42, 1, -2.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 9)
+[node name="PasilloA" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/Pasillo7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, -3.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 7)
-
-[node name="PasilloA" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloA"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -20)
-material_override = SubResource("StandardMaterial3D_7s0hp")
-use_collision = true
-size = Vector3(2, 0, 12)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloA"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/PasilloA"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 5, 2, -20)
 material_override = SubResource("StandardMaterial3D_7s0hp")
 use_collision = true
 size = Vector3(2, 0, 12)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloA"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 1, -14)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(2, 2, 0)
+[node name="PasilloLoop" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloA"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 1, -20)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 12)
-
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloA"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -22.75)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 6.5)
-
-[node name="Pared4" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloA"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -26)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(2, 2, 0)
-
-[node name="PasilloLoop" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloLoop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -25)
-material_override = SubResource("StandardMaterial3D_6pq6l")
-use_collision = true
-size = Vector3(4, 0, 2)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloLoop"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/PasilloLoop"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -18, 2, -25)
 material_override = SubResource("StandardMaterial3D_6pq6l")
 use_collision = true
 size = Vector3(4, 0, 2)
 
-[node name="HabitacionB" type="Node" parent="Mapa/CSGCombiner3D"]
+[node name="HabitacionB" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionB"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -28)
-material_override = SubResource("StandardMaterial3D_mbpdj")
-use_collision = true
-size = Vector3(18, 0, 8)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionB"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/HabitacionB"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -7, 2, -28)
 material_override = SubResource("StandardMaterial3D_mbpdj")
 use_collision = true
 size = Vector3(18, 0, 8)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionB"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -32)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(18, 2, 0)
+[node name="HabitacionBuho" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionB"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16, 1, -29)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 6)
-
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionB"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -28)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 8)
-
-[node name="Pared4" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionB"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12, 1, -24)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(8, 2, 0)
-
-[node name="Pared5" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionB"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 1, -24)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(8, 2, 0)
-
-[node name="HabitacionBuho" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionBuho"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -30)
-material_override = SubResource("StandardMaterial3D_mbpdj")
-use_collision = true
-size = Vector3(18, 0, 8)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionBuho"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/HabitacionBuho"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -42, 2, -30)
 material_override = SubResource("StandardMaterial3D_mbpdj")
 use_collision = true
 size = Vector3(18, 0, 8)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionBuho"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -51, 1, -30)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 8)
+[node name="HabitacionExtra1" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionBuho"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 1, -30)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 8)
-
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionBuho"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -42, 1, -34)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(18, 2, 0)
-
-[node name="Dintel1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionBuho"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.501, 1.9, -26)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 0.2, 1)
-
-[node name="Dintel2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionBuho"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -49.5, 1.9, -26)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 0.2, 1)
-
-[node name="HabitacionExtra1" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -21.5)
-material_override = SubResource("StandardMaterial3D_m5dog")
-use_collision = true
-size = Vector3(4, 0, 3)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra1"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/HabitacionExtra1"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -10, 2, -21.5)
 material_override = SubResource("StandardMaterial3D_m5dog")
 use_collision = true
 size = Vector3(4, 0, 3)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.007, 1, -21.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 3)
+[node name="HabitacionExtra2" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -23)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(4, 2, 0)
-
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10, 1, -20)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(4, 2, 0)
-
-[node name="Dintel1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra1"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 1.9, -21.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 0.2, 1)
-
-[node name="HabitacionExtra2" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -16)
-material_override = SubResource("StandardMaterial3D_ivhrh")
-use_collision = true
-size = Vector3(10, 0, 7)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra2"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/HabitacionExtra2"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -1, 2, -16)
 material_override = SubResource("StandardMaterial3D_ivhrh")
 use_collision = true
 size = Vector3(10, 0, 7)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -19.5)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(10, 2, 0)
+[node name="HabitacionExtra3" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 1, -12.5)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(10, 2, 0)
-
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 1, -19)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 1)
-
-[node name="Pared4" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 1, -15.002)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 5)
-
-[node name="Dintel1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6, 1.9, -18)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 0.2, 1)
-
-[node name="Dintel2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 1.9, -18)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 0.2, 1)
-
-[node name="HabitacionExtra3" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -18)
-material_override = SubResource("StandardMaterial3D_mbpdj")
-use_collision = true
-size = Vector3(10, 0, 12)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra3"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/HabitacionExtra3"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -27, 2, -18)
 material_override = SubResource("StandardMaterial3D_mbpdj")
 use_collision = true
 size = Vector3(10, 0, 12)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1, -18)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 12)
+[node name="HabitacionExtra4" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Dintel1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra3"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22, 1.9, -13.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 0.2, 1)
-
-[node name="Dintel2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra3"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22, 1.9, -22.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 0.2, 1)
-
-[node name="Dintel3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra3"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.5, 1.9, -24)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 0.2, 1)
-
-[node name="Dintel4" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra3"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.5, 1.9, -12)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 0.2, 1)
-
-[node name="HabitacionExtra4" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 0, -11)
-material_override = SubResource("StandardMaterial3D_ip5jl")
-use_collision = true
-size = Vector3(6, 0, 8)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra4"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/HabitacionExtra4"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -43, 2, -11)
 material_override = SubResource("StandardMaterial3D_ip5jl")
 use_collision = true
 size = Vector3(6, 0, 8)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 1, -15)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(6, 2, 0)
+[node name="HabitacionTransicion" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, -13.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 3)
-
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, -8.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 3)
-
-[node name="Pared4" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra4"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -46, 1, -11)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 2, 8)
-
-[node name="Pared5" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionExtra4"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -44, 1, -7)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(4, 2, 0)
-
-[node name="HabitacionTransicion" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionTransicion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.001, 0, -8)
-material_override = SubResource("StandardMaterial3D_mbpdj")
-use_collision = true
-size = Vector3(12, 0, 14)
-
-[node name="Piso2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionTransicion"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/HabitacionTransicion"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -14.001, 2, -8)
 material_override = SubResource("StandardMaterial3D_mbpdj")
 use_collision = true
 size = Vector3(12, 0, 14)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionTransicion"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1, -15)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(12, 2, 0)
+[node name="PasilloFinal" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionTransicion"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14, 1, -1)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(12, 2, 0)
-
-[node name="Dintel1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionTransicion"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 1.9, -13.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 0.2, 1)
-
-[node name="Dintel2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionTransicion"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 1.9, -2.5)
-material_override = SubResource("StandardMaterial3D_rhv71")
-use_collision = true
-size = Vector3(0, 0.2, 1)
-
-[node name="PasilloFinal" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloFinal"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -25)
-material_override = SubResource("StandardMaterial3D_7s0hp")
-use_collision = true
-size = Vector3(32, 0, 2)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloFinal"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/PasilloFinal"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -38, 2, -25)
 material_override = SubResource("StandardMaterial3D_7s0hp")
 use_collision = true
 size = Vector3(32, 0, 2)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloFinal"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -42.5, 1, -24)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(23, 2, 0)
+[node name="HabitacionFinal" type="Node" parent="Mapa/Ceiling"]
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloFinal"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26, 1, -24)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(8, 2, 0)
-
-[node name="Pared6" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloFinal"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -18, 1, -24)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(4, 2, 0)
-
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloFinal"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -26)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(18, 2, 0)
-
-[node name="Pared4" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloFinal"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 1, -26)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(14, 2, 0)
-
-[node name="Pared5" type="CSGBox3D" parent="Mapa/CSGCombiner3D/PasilloFinal"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 1, -26)
-material_override = SubResource("StandardMaterial3D_rrud3")
-use_collision = true
-size = Vector3(4, 2, 0)
-
-[node name="HabitacionFinal" type="Node" parent="Mapa/CSGCombiner3D"]
-
-[node name="Piso" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionFinal"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 0, -25)
-material_override = SubResource("StandardMaterial3D_2omth")
-use_collision = true
-size = Vector3(8, 0, 8)
-
-[node name="Techo" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionFinal"]
+[node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/HabitacionFinal"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -58, 2, -25)
 material_override = SubResource("StandardMaterial3D_2omth")
 use_collision = true
 size = Vector3(8, 0, 8)
 
-[node name="Pared1" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionFinal"]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Mapa"]
+navigation_mesh = SubResource("NavigationMesh_1bmay")
+
+[node name="Walls" type="CSGCombiner3D" parent="Mapa/NavigationRegion3D"]
+
+[node name="Pasillo1" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -4)
+material_override = SubResource("StandardMaterial3D_0vx5q")
+use_collision = true
+size = Vector3(0, 2, 8)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -3)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 6)
+
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+material_override = SubResource("StandardMaterial3D_awv12")
+use_collision = true
+size = Vector3(2, 2, 0)
+
+[node name="Pasillo2" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -8)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(8, 2, 0)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3, 1, -6)
+material_override = SubResource("StandardMaterial3D_yid1p")
+use_collision = true
+size = Vector3(6, 2, 0)
+
+[node name="Pasillo3" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -3)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 6)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -12.75)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 9.5)
+
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -21.25)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 5.5)
+
+[node name="Pared4" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 1, -17.5063)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 7)
+
+[node name="Pared5" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 1, -23)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 2)
+
+[node name="Pared6" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 1, -6.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 13)
+
+[node name="Pared7" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 0)
+material_override = SubResource("StandardMaterial3D_awv12")
+use_collision = true
+size = Vector3(2, 2, 0)
+
+[node name="Pasillo4" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, -13.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 21)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 0)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 4)
+
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo4"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.978, 1, -23.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 1)
+
+[node name="Pared4" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo4"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.978, 1, -12.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 1)
+
+[node name="Pared5" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo4"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22, 1, -18)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 8)
+
+[node name="Pared6" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo4"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22, 1, -5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 10)
+
+[node name="Pasillo5" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.5, 1, -12)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(9, 2, 0)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo5"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -31, 1, -10)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(18, 2, 0)
+
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 1, -12)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(8, 2, 0)
+
+[node name="Pasillo6" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo6"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -31, 1, 2)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(22, 2, 0)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 1, 0)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(18, 2, 0)
+
+[node name="Pasillo7" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo7"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -42, 1, -2.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 9)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, -3.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 7)
+
+[node name="PasilloA" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/PasilloA"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 1, -14)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(2, 2, 0)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/PasilloA"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6, 1, -20)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 12)
+
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/PasilloA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -22.75)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 6.5)
+
+[node name="Pared4" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/PasilloA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -26)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(2, 2, 0)
+
+[node name="HabitacionB" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -32)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(18, 2, 0)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionB"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16, 1, -29)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 6)
+
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -28)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 8)
+
+[node name="Pared4" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionB"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12, 1, -24)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(8, 2, 0)
+
+[node name="Pared5" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionB"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 1, -24)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(8, 2, 0)
+
+[node name="HabitacionBuho" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionBuho"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -51, 1, -30)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 8)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionBuho"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 1, -30)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 8)
+
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionBuho"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -42, 1, -34)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(18, 2, 0)
+
+[node name="Dintel1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionBuho"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.501, 1.9, -26)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 0.2, 1)
+
+[node name="Dintel2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionBuho"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -49.5, 1.9, -26)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 0.2, 1)
+
+[node name="HabitacionExtra1" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -12.007, 1, -21.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 3)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, -23)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(4, 2, 0)
+
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10, 1, -20)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(4, 2, 0)
+
+[node name="Dintel1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 1.9, -21.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 0.2, 1)
+
+[node name="HabitacionExtra2" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -19.5)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(10, 2, 0)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 1, -12.5)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(10, 2, 0)
+
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 1, -19)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 1)
+
+[node name="Pared4" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 1, -15.002)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 5)
+
+[node name="Dintel1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -6, 1.9, -18)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 0.2, 1)
+
+[node name="Dintel2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 1.9, -18)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 0.2, 1)
+
+[node name="HabitacionExtra3" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 1, -18)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 12)
+
+[node name="Dintel1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22, 1.9, -13.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 0.2, 1)
+
+[node name="Dintel2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22, 1.9, -22.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 0.2, 1)
+
+[node name="Dintel3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.5, 1.9, -24)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 0.2, 1)
+
+[node name="Dintel4" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30.5, 1.9, -12)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 0.2, 1)
+
+[node name="HabitacionExtra4" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 1, -15)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(6, 2, 0)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, -13.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 3)
+
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 1, -8.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 3)
+
+[node name="Pared4" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra4"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -46, 1, -11)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 2, 8)
+
+[node name="Pared5" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionExtra4"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -44, 1, -7)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(4, 2, 0)
+
+[node name="HabitacionTransicion" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionTransicion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1, -15)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(12, 2, 0)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionTransicion"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -14, 1, -1)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(12, 2, 0)
+
+[node name="Dintel1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionTransicion"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 1.9, -13.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 0.2, 1)
+
+[node name="Dintel2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionTransicion"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -20, 1.9, -2.5)
+material_override = SubResource("StandardMaterial3D_rhv71")
+use_collision = true
+size = Vector3(0, 0.2, 1)
+
+[node name="PasilloFinal" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/PasilloFinal"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -42.5, 1, -24)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(23, 2, 0)
+
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/PasilloFinal"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -26, 1, -24)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(8, 2, 0)
+
+[node name="Pared6" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/PasilloFinal"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -18, 1, -24)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(4, 2, 0)
+
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/PasilloFinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -26)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(18, 2, 0)
+
+[node name="Pared4" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/PasilloFinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 1, -26)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(14, 2, 0)
+
+[node name="Pared5" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/PasilloFinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52, 1, -26)
+material_override = SubResource("StandardMaterial3D_rrud3")
+use_collision = true
+size = Vector3(4, 2, 0)
+
+[node name="HabitacionFinal" type="Node" parent="Mapa/NavigationRegion3D/Walls"]
+
+[node name="Pared1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionFinal"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -62, 1, -25)
 material_override = SubResource("StandardMaterial3D_rhv71")
 use_collision = true
 size = Vector3(0, 2, 8)
 
-[node name="Pared2" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionFinal"]
+[node name="Pared2" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionFinal"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -58, 1, -29)
 material_override = SubResource("StandardMaterial3D_rrud3")
 use_collision = true
 size = Vector3(8, 2, 0)
 
-[node name="Pared3" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionFinal"]
+[node name="Pared3" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionFinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 1, -21)
 material_override = SubResource("StandardMaterial3D_rrud3")
 use_collision = true
 size = Vector3(8, 2, 0)
 
-[node name="Pared4" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionFinal"]
+[node name="Pared4" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionFinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 1, -22.5)
 material_override = SubResource("StandardMaterial3D_rhv71")
 use_collision = true
 size = Vector3(0, 2, 3)
 
-[node name="Pared5" type="CSGBox3D" parent="Mapa/CSGCombiner3D/HabitacionFinal"]
+[node name="Pared5" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionFinal"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 1, -27.5)
 material_override = SubResource("StandardMaterial3D_rhv71")
 use_collision = true
 size = Vector3(0, 2, 3)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mapa/CSGCombiner3D"]
+[node name="Ground" type="CSGCombiner3D" parent="Mapa/NavigationRegion3D"]
 
-[node name="Piso" type="CollisionShape3D" parent="Mapa/CSGCombiner3D/StaticBody3D"]
+[node name="Pasillo1" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/Pasillo1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -4)
+material_override = SubResource("StandardMaterial3D_7s0hp")
+use_collision = true
+size = Vector3(2, 0, 8)
+
+[node name="Pasillo2" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/Pasillo2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0, -7)
+material_override = SubResource("StandardMaterial3D_7s0hp")
+use_collision = true
+size = Vector3(2, 0, 6)
+
+[node name="Pasillo3" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/Pasillo3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -12.0052)
+material_override = SubResource("StandardMaterial3D_51swv")
+use_collision = true
+size = Vector3(2, 0, 24)
+
+[node name="Pasillo4" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/Pasillo4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0, -12)
+material_override = SubResource("StandardMaterial3D_7s0hp")
+use_collision = true
+size = Vector3(2, 0, 28)
+
+[node name="Pasillo5" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/Pasillo5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -11)
+material_override = SubResource("StandardMaterial3D_5ht1q")
+use_collision = true
+size = Vector3(18, 0, 2)
+
+[node name="Pasillo6" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/Pasillo6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 1)
+material_override = SubResource("StandardMaterial3D_6pq6l")
+use_collision = true
+size = Vector3(18, 0, 2)
+
+[node name="Pasillo7" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/Pasillo7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 0, -2.5)
+material_override = SubResource("StandardMaterial3D_83xxy")
+use_collision = true
+size = Vector3(2, 0, 9)
+
+[node name="PasilloA" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/PasilloA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -20)
+material_override = SubResource("StandardMaterial3D_7s0hp")
+use_collision = true
+size = Vector3(2, 0, 12)
+
+[node name="PasilloLoop" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso1" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/PasilloLoop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -25)
+material_override = SubResource("StandardMaterial3D_6pq6l")
+use_collision = true
+size = Vector3(4, 0, 2)
+
+[node name="HabitacionB" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/HabitacionB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -28)
+material_override = SubResource("StandardMaterial3D_mbpdj")
+use_collision = true
+size = Vector3(18, 0, 8)
+
+[node name="HabitacionBuho" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/HabitacionBuho"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -30)
+material_override = SubResource("StandardMaterial3D_mbpdj")
+use_collision = true
+size = Vector3(18, 0, 8)
+
+[node name="HabitacionExtra1" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/HabitacionExtra1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -21.5)
+material_override = SubResource("StandardMaterial3D_m5dog")
+use_collision = true
+size = Vector3(4, 0, 3)
+
+[node name="HabitacionExtra2" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/HabitacionExtra2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -16)
+material_override = SubResource("StandardMaterial3D_ivhrh")
+use_collision = true
+size = Vector3(10, 0, 7)
+
+[node name="HabitacionExtra3" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/HabitacionExtra3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -18)
+material_override = SubResource("StandardMaterial3D_mbpdj")
+use_collision = true
+size = Vector3(10, 0, 12)
+
+[node name="HabitacionExtra4" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/HabitacionExtra4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 0, -11)
+material_override = SubResource("StandardMaterial3D_ip5jl")
+use_collision = true
+size = Vector3(6, 0, 8)
+
+[node name="HabitacionTransicion" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/HabitacionTransicion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.001, 0, -8)
+material_override = SubResource("StandardMaterial3D_mbpdj")
+use_collision = true
+size = Vector3(12, 0, 14)
+
+[node name="PasilloFinal" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/PasilloFinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -25)
+material_override = SubResource("StandardMaterial3D_7s0hp")
+use_collision = true
+size = Vector3(32, 0, 2)
+
+[node name="HabitacionFinal" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Ground/HabitacionFinal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 0, -25)
+material_override = SubResource("StandardMaterial3D_2omth")
+use_collision = true
+size = Vector3(8, 0, 8)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mapa/NavigationRegion3D/Ground"]
+
+[node name="Piso" type="CollisionShape3D" parent="Mapa/NavigationRegion3D/Ground/StaticBody3D"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -29.5005, 0, -16.3934)
 shape = SubResource("WorldBoundaryShape3D_q0pid")
 
-[node name="Enviro" type="Node3D" parent="Mapa/CSGCombiner3D"]
+[node name="Enviro" type="Node3D" parent="Mapa/NavigationRegion3D/Ground"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Mapa/CSGCombiner3D/Enviro"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Mapa/NavigationRegion3D/Ground/Enviro"]
 environment = SubResource("Environment_x3e4x")
 
 [node name="Characters" type="Node" parent="."]
