@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://xhqo2d6yi1wp"]
+[gd_scene load_steps=32 format=3 uid="uid://xhqo2d6yi1wp"]
 
 [ext_resource type="Texture2D" uid="uid://deq47rli6qimw" path="res://resources/textures/Concreto/Concrete1/concrete tiles-AO.jpg" id="1_b42x3"]
 [ext_resource type="Script" path="res://scenes/new_map_scenes/MapaNuevo.gd" id="1_wcg6v"]
@@ -60,6 +60,9 @@ albedo_texture = ExtResource("2_lcohn")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yid1p"]
 albedo_texture = ExtResource("2_lcohn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4vl1n"]
+size = Vector3(1, 3.58781, 3.05545)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_q0pid"]
 
@@ -230,6 +233,7 @@ size = Vector3(32, 0, 2)
 
 [node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/HabitacionFinal"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -58, 2, -25)
+visible = false
 material_override = SubResource("StandardMaterial3D_2omth")
 use_collision = true
 size = Vector3(8, 0, 8)
@@ -717,6 +721,14 @@ material_override = SubResource("StandardMaterial3D_rhv71")
 use_collision = true
 size = Vector3(0, 2, 3)
 
+[node name="Area3D" type="Area3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionFinal"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="WinCondition" type="CollisionShape3D" parent="Mapa/NavigationRegion3D/Walls/HabitacionFinal/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.5, 2, -25)
+shape = SubResource("BoxShape3D_4vl1n")
+
 [node name="Ground" type="CSGCombiner3D" parent="Mapa/NavigationRegion3D"]
 
 [node name="Pasillo1" type="Node" parent="Mapa/NavigationRegion3D/Ground"]
@@ -912,5 +924,6 @@ light_color = Color(0.960784, 0.368627, 0.337255, 1)
 stream = ExtResource("7_8jvsv")
 autoplay = true
 
+[connection signal="body_entered" from="Mapa/NavigationRegion3D/Walls/HabitacionFinal/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="attacking" from="Characters/Buho" to="." method="_on_buho_attacking"]
 [connection signal="spoting" from="Characters/Buho" to="." method="_on_buho_spoting"]
