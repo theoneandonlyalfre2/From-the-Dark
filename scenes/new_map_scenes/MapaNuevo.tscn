@@ -1,6 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://xhqo2d6yi1wp"]
+[gd_scene load_steps=31 format=3 uid="uid://xhqo2d6yi1wp"]
 
 [ext_resource type="Texture2D" uid="uid://deq47rli6qimw" path="res://resources/textures/Concreto/Concrete1/concrete tiles-AO.jpg" id="1_b42x3"]
+[ext_resource type="Script" path="res://scenes/new_map_scenes/MapaNuevo.gd" id="1_wcg6v"]
 [ext_resource type="Texture2D" uid="uid://x0ogodopx0rg" path="res://resources/textures/Concreto/Concrete1/concrete-tiles-diffuse.jpg" id="2_lcohn"]
 [ext_resource type="PackedScene" uid="uid://ya21rrd7oioh" path="res://models/characters/player/player.tscn" id="3_y75v5"]
 [ext_resource type="Shader" path="res://resources/pulse.gdshader" id="4_kk3e3"]
@@ -82,7 +83,8 @@ material = SubResource("ShaderMaterial_aenpy")
 flip_faces = true
 size = Vector2(3, 3)
 
-[node name="Node3D" type="Node3D"]
+[node name="World" type="Node3D"]
+script = ExtResource("1_wcg6v")
 
 [node name="Mapa" type="Node" parent="."]
 
@@ -892,8 +894,23 @@ visible = false
 [node name="Buho" parent="Characters" instance=ExtResource("6_2it1t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.4046, 0.206023, -30.277)
 
+[node name="Pivot" type="SpringArm3D" parent="Characters/Buho"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.292464, -0.630335)
+spring_length = 0.05
+
+[node name="GameOver" type="Camera3D" parent="Characters/Buho/Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.113075)
+
+[node name="ScreamerLight" type="OmniLight3D" parent="Characters/Buho"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.283368, -0.856562)
+visible = false
+light_color = Color(0.960784, 0.368627, 0.337255, 1)
+
 [node name="Música" type="Node" parent="."]
 
 [node name="Main_Theme" type="AudioStreamPlayer" parent="Música"]
 stream = ExtResource("7_8jvsv")
 autoplay = true
+
+[connection signal="attacking" from="Characters/Buho" to="." method="_on_buho_attacking"]
+[connection signal="spoting" from="Characters/Buho" to="." method="_on_buho_spoting"]

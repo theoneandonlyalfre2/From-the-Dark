@@ -38,7 +38,7 @@ theme_override_constants/separation = 12
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_8dft2")
-text = "Pausa"
+text = "Pause"
 
 [node name="Resume" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -47,7 +47,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_8dft2")
-text = "Continuar"
+text = "Continue"
 
 [node name="Restart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -65,7 +65,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_8dft2")
-text = "Menu Principal"
+text = "Main Menu"
 
 [node name="Haul" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_i0o13")

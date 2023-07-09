@@ -8,7 +8,7 @@ extends MarginContainer
 # Load references.
 
 ## Load reference to Menu_principal node.
-@onready var menu_principal = %Menu_principal
+@onready var menu_principal = %Main_Menu
 ## Load reference to Quit node.
 @onready var quit = %Quit
 ## Load reference to Retry node.

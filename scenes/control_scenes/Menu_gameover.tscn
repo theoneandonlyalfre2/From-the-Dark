@@ -35,11 +35,11 @@ layout_mode = 2
 theme = ExtResource("2_rdcph")
 text = "Game Over"
 
-[node name="Menu_principal" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Main_Menu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_rdcph")
-text = "Menu Principal"
+text = "Main Menu"
 
 [node name="Retry" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
