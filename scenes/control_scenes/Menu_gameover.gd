@@ -8,7 +8,7 @@ extends MarginContainer
 # Load references.
 
 ## Load reference to Menu_principal node.
-@onready var menu_principal = %Menu_principal
+@onready var menu_principal = %Main_Menu
 ## Load reference to Quit node.
 @onready var quit = %Quit
 ## Load reference to Retry node.
@@ -28,7 +28,7 @@ func _on_menu_principal_presssed():
 
 ## Undefined.
 func _on_retry_presssed():
-	get_tree().change_scene_to_file("res://scenes/control_scenes/node_3d.tscn")
+	get_tree().change_scene_to_file("res://scenes/new_map_scenes/MapaNuevo.tscn")
 
 ## Undefined.
 func _on_quit_presssed(): 

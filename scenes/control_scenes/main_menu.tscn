@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://djxr82a7vkwhl"]
+[gd_scene load_steps=7 format=3 uid="uid://djxr82a7vkwhl"]
 
 [ext_resource type="Script" path="res://scenes/control_scenes/MarginContainer.gd" id="1_ur5o8"]
 [ext_resource type="FontFile" uid="uid://bpep5j6x7abay" path="res://fonts/ghastly_panic/Ghastly Panic.ttf" id="2_epd5f"]
+[ext_resource type="AudioStream" uid="uid://b1m7xol8r21e2" path="res://audio/sounds/Bat Screech.mp3" id="3_n71s4"]
 
 [sub_resource type="Theme" id="Theme_64fvk"]
 Label/font_sizes/font_size = 64
@@ -15,7 +16,7 @@ Button/fonts/font = ExtResource("2_epd5f")
 default_font_size = 64
 Button/fonts/font = ExtResource("2_epd5f")
 
-[node name="MarginContainer" type="MarginContainer"]
+[node name="MarginContainer2" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -65,3 +66,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = SubResource("Theme_rpb6s")
 text = "Quit"
+
+[node name="Screech" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n71s4")

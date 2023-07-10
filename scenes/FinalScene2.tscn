@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://deej8yhk07vhg"]
+
+[ext_resource type="Theme" uid="uid://lfm32ou40lqe" path="res://resources/mi_theme.tres" id="1_0n4i4"]
+[ext_resource type="Script" path="res://scenes/FinalScene2.gd" id="1_8f0wv"]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8f0wv")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(1000, 650)
+layout_mode = 2
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 9
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Won" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_0n4i4")
+text = "You've won this time"
+
+[node name="Restart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("1_0n4i4")
+text = "Replay"
+
+[node name="MainMenu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("1_0n4i4")
+text = "Main Menu"

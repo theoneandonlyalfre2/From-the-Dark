@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0thgomm2uh4a"]
+
+[ext_resource type="FontFile" uid="uid://bpep5j6x7abay" path="res://fonts/ghastly_panic/Ghastly Panic.ttf" id="1_87co7"]
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(13.1146, 7.27559)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 9
+theme_override_constants/margin_bottom = 9
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_87co7")
+text = "You've won this time"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_87co7")
+text = "Restart"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_87co7")
+text = "Main Menu"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://comruxpv4b3ad"]
+[gd_scene load_steps=4 format=3 uid="uid://comruxpv4b3ad"]
 
 [ext_resource type="Script" path="res://scenes/control_scenes/Menu_pausa.gd" id="1_wd3db"]
 [ext_resource type="Theme" uid="uid://lfm32ou40lqe" path="res://resources/mi_theme.tres" id="2_8dft2"]
+[ext_resource type="AudioStream" uid="uid://clyfesjqy3whq" path="res://audio/sounds/Haul.mp3" id="3_i0o13"]
 
 [node name="MarginContainer" type="MarginContainer"]
 process_mode = 3
@@ -37,7 +38,7 @@ theme_override_constants/separation = 12
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_8dft2")
-text = "Pausa"
+text = "Pause"
 
 [node name="Resume" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -46,7 +47,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_8dft2")
-text = "Continuar"
+text = "Continue"
 
 [node name="Restart" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -64,4 +65,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("2_8dft2")
-text = "Menu Principal"
+text = "Main Menu"
+
+[node name="Haul" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i0o13")

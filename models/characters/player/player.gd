@@ -9,10 +9,10 @@ class_name Player
 # Load references
 
 ## Load reference to an AudioStreamPlayer node.
-@onready var audio_stream_player = $AudioStreamPlayer
-
-## Load a reference to a poder.tscn scene.
-var Poder = preload("res://models/characters/player/poder.tscn")
+@onready var volar = $Volar
+@onready var screech =$Screech
+## Load reference to a Pivot node.
+@onready var pivot=$Pivot
 
 # Define variables to track the state of the player's abilities and various time intervals.
 
@@ -30,6 +30,10 @@ var tiempo_espacio_prohibido = 1
 var action1 = true
 ## Flag that tells if the gravity is inverted
 var invGravity = false
+## Sensitivity of the mouse
+var mouse_sensitivity=0.2
+## Get the gravity from the project settings to be synced with RigidBody nodes.
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 # Define constants for movement and jumping.
 
@@ -42,9 +46,6 @@ const Alt_min = 1
 ## Max of height.
 const Alt_max = 3
 
-## Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
 # Define the methods.
 
 ## Physics of the bat.
@@ -56,8 +57,7 @@ func _physics_process(delta):
 		# Handle jumping when the "ui_accept" action is pressed.
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.y = JUMP_VELOCITY
-			audio_stream_player.play()
-	
+			volar.play()
 			# Flying animation
 			$AnimationPlayer.play("Volar")
 
@@ -67,9 +67,9 @@ func _physics_process(delta):
 		var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 		# Move the player based on the input direction or decelerate if no input is detected.
-		if direction:
-			velocity.x = -direction.x * SPEED
-			velocity.z = -direction.z * SPEED
+		if direction and not is_on_floor():
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -83,6 +83,9 @@ func _physics_process(delta):
 	else:
 		# Reversing the gravity.
 		velocity.y += gravity * delta
+		# Stoping the bat.
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
 		# Move the player based on their current velocity.
 		move_and_slide()
@@ -90,15 +93,15 @@ func _physics_process(delta):
 		# Changing gravity
 		if Input.is_action_just_pressed("ui_up_and_down"):
 			invGravity = false
-
-## Defining keys from the animations
-func _unhandled_key_input(event:InputEvent):
-	if event.is_pressed() and event.keycode == KEY_F:
+	
+	if Input.is_action_pressed("ui_echolocation"):
+		get_tree().call_group("enemies", "update_target_location", self.global_transform.origin)
 		if action1 == true:
+			screech.play()
 			# Echolocation animation
 			$AnimationPlayer.play("Sonar")
 	
-	if event.is_pressed() and event.keycode == KEY_D:
+	if Input.is_action_just_pressed("ui_up_and_down"):
 		if action1 == true:
 			# Go up animation
 			$AnimationPlayer.play("Techo")
@@ -108,3 +111,15 @@ func _unhandled_key_input(event:InputEvent):
 			# Go down animation
 			$AnimationPlayer.play("NoTecho")
 			action1 = true
+
+## Undefined
+func _input(event):
+	if event is InputEventMouseMotion:
+		# Rotation of camera relative to mouse
+		rotate_y(deg_to_rad(-event.relative.x*mouse_sensitivity))
+		pivot.rotate_x(deg_to_rad(-event.relative.y*mouse_sensitivity))
+		pivot.rotation.x = clamp(pivot.rotation.x, deg_to_rad(-80), deg_to_rad(40))
+		
+## Undefined
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
