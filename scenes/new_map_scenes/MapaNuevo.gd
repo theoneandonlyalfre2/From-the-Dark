@@ -29,5 +29,6 @@ func _on_buho_spoting(is_spoting):
 
 func _on_area_3d_body_entered(body):
 	if body.is_in_group("player"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene_to_file("res://scenes/FinalScene2.tscn")
 		#print("You've won this time")
