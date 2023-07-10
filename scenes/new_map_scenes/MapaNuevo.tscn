@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://xhqo2d6yi1wp"]
+[gd_scene load_steps=33 format=3 uid="uid://xhqo2d6yi1wp"]
 
 [ext_resource type="Texture2D" uid="uid://deq47rli6qimw" path="res://resources/textures/Concreto/Concrete1/concrete tiles-AO.jpg" id="1_b42x3"]
 [ext_resource type="Script" path="res://scenes/new_map_scenes/MapaNuevo.gd" id="1_wcg6v"]
 [ext_resource type="Texture2D" uid="uid://x0ogodopx0rg" path="res://resources/textures/Concreto/Concrete1/concrete-tiles-diffuse.jpg" id="2_lcohn"]
+[ext_resource type="PackedScene" uid="uid://yyx8ocrg77qm" path="res://resources/Props/Flecha2.glb" id="3_bt28u"]
 [ext_resource type="PackedScene" uid="uid://ya21rrd7oioh" path="res://models/characters/player/player.tscn" id="3_y75v5"]
 [ext_resource type="Shader" path="res://resources/pulse.gdshader" id="4_kk3e3"]
 [ext_resource type="Script" path="res://scenes/new_map_scenes/Ecolocalzación.gd" id="5_t0sqn"]
@@ -117,6 +118,9 @@ material_override = SubResource("StandardMaterial3D_51swv")
 use_collision = true
 size = Vector3(2, 0, 24)
 
+[node name="Flecha1" parent="Mapa/Ceiling/Pasillo3" instance=ExtResource("3_bt28u")]
+transform = Transform3D(-1.74846e-08, -0.4, 1.74846e-08, 0, -1.74846e-08, -0.4, 0.4, -1.74846e-08, 7.64274e-16, -7.9704, 1.68275, -10.7853)
+
 [node name="Pasillo4" type="Node" parent="Mapa/Ceiling"]
 
 [node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/Pasillo4"]
@@ -125,13 +129,23 @@ material_override = SubResource("StandardMaterial3D_7s0hp")
 use_collision = true
 size = Vector3(2, 0, 28)
 
+[node name="Flecha1" parent="Mapa/Ceiling/Pasillo4" instance=ExtResource("3_bt28u")]
+transform = Transform3D(-1.74846e-08, -0.4, 1.74846e-08, 0, -1.74846e-08, -0.4, 0.4, -1.74846e-08, 7.64274e-16, -21.9269, 1.68275, -18.0092)
+
+[node name="Flecha2" parent="Mapa/Ceiling/Pasillo4" instance=ExtResource("3_bt28u")]
+transform = Transform3D(-1.74846e-08, -0.4, 1.74846e-08, 0, -1.74846e-08, -0.4, 0.4, -1.74846e-08, 7.64274e-16, -21.9269, 1.68275, -5.55606)
+
 [node name="Pasillo5" type="Node" parent="Mapa/Ceiling"]
 
 [node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/Pasillo5"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -31, 2, -11)
+visible = false
 material_override = SubResource("StandardMaterial3D_5ht1q")
 use_collision = true
 size = Vector3(18, 0, 2)
+
+[node name="Flecha1" parent="Mapa/Ceiling/Pasillo5" instance=ExtResource("3_bt28u")]
+transform = Transform3D(-0.4, -3.49691e-08, 1.52855e-15, 0, -1.74846e-08, -0.4, 3.49691e-08, -0.4, 1.74846e-08, -33.6983, 1.68275, -11.8496)
 
 [node name="Pasillo6" type="Node" parent="Mapa/Ceiling"]
 
@@ -140,6 +154,9 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -31, 2
 material_override = SubResource("StandardMaterial3D_6pq6l")
 use_collision = true
 size = Vector3(18, 0, 2)
+
+[node name="Flecha1" parent="Mapa/Ceiling/Pasillo6" instance=ExtResource("3_bt28u")]
+transform = Transform3D(-0.4, -3.49691e-08, 1.52855e-15, 0, -1.74846e-08, -0.4, 3.49691e-08, -0.4, 1.74846e-08, -28.4442, 1.68275, 0.0211866)
 
 [node name="Pasillo7" type="Node" parent="Mapa/Ceiling"]
 
@@ -164,6 +181,9 @@ transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -18, 2
 material_override = SubResource("StandardMaterial3D_6pq6l")
 use_collision = true
 size = Vector3(4, 0, 2)
+
+[node name="Flecha1" parent="Mapa/Ceiling/PasilloLoop" instance=ExtResource("3_bt28u")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -18.1074, 1.68275, -24.0204)
 
 [node name="HabitacionB" type="Node" parent="Mapa/Ceiling"]
 
@@ -229,11 +249,13 @@ material_override = SubResource("StandardMaterial3D_7s0hp")
 use_collision = true
 size = Vector3(32, 0, 2)
 
+[node name="Flecha1" parent="Mapa/Ceiling/PasilloFinal" instance=ExtResource("3_bt28u")]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, -0.4, 0, 0.4, -1.74846e-08, -42.1369, 1.68275, -24.0204)
+
 [node name="HabitacionFinal" type="Node" parent="Mapa/Ceiling"]
 
 [node name="Techo" type="CSGBox3D" parent="Mapa/Ceiling/HabitacionFinal"]
 transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -58, 2, -25)
-visible = false
 material_override = SubResource("StandardMaterial3D_2omth")
 use_collision = true
 size = Vector3(8, 0, 8)
@@ -342,7 +364,7 @@ use_collision = true
 size = Vector3(0, 2, 1)
 
 [node name="Pared4" type="CSGBox3D" parent="Mapa/NavigationRegion3D/Walls/Pasillo4"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -21.978, 1, -12.5)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -22, 1, -12.5)
 material_override = SubResource("StandardMaterial3D_rhv71")
 use_collision = true
 size = Vector3(0, 2, 1)
